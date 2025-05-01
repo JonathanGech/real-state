@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:real_state/Pages/home_page.dart';
+import 'package:real_state/utils/size.dart';
+import 'package:real_state/widgets/navbar/bloc/navbar_bloc.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(MultiBlocProvider(
+    providers: [
+      BlocProvider(
+        create: (context) => NavbarBloc(),
+      ),
+    ],
+    child: const MainApp(),
+  ));
 }
 
 class MainApp extends StatelessWidget {
@@ -9,12 +20,9 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    h = MediaQuery.sizeOf(context).height;
+    w = MediaQuery.sizeOf(context).width;
     return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
+        debugShowCheckedModeBanner: false, home: HomePage());
   }
 }
