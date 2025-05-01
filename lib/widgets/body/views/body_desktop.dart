@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:real_state/utils/app_colors.dart';
 import 'package:real_state/utils/custom_ui.dart';
 import 'package:real_state/utils/size.dart';
+import 'package:real_state/widgets/body/feature/feature.dart';
 
 class BodyDesktop extends StatelessWidget {
   const BodyDesktop({super.key});
@@ -81,7 +83,7 @@ class BodyDesktop extends StatelessWidget {
                                 radius: 10.w,
                                 fontSize: 18.sp,
                                 fontWeight: FontWeight.w400,
-                                borderColor: AppColor.g10,
+                                borderColor: Colors.transparent,
                                 fontFamily: 'Urbanist',
                                 backgroundColor: AppColor.p60,
                                 textColor: AppColor.white,
@@ -156,8 +158,9 @@ class BodyDesktop extends StatelessWidget {
 
         // ========================= Fetures section ======================
         SizedBox(
-          height: 30.h,
-        )
+          height: 80.h,
+        ),
+        const Feature()
       ],
     );
   }
