@@ -1,12 +1,68 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:real_state/utils/app_colors.dart';
 import 'package:real_state/utils/custom_ui.dart';
+import 'package:real_state/utils/size.dart';
+import 'package:real_state/widgets/body/feature/views/home_card.dart';
+import 'package:real_state/widgets/body/feature/views/home_card_model.dart';
 
-class FeatureDesktop extends StatelessWidget {
+class FeatureDesktop extends StatefulWidget {
   const FeatureDesktop({super.key});
 
+  @override
+  State<FeatureDesktop> createState() => _FeatureDesktopState();
+}
+
+class _FeatureDesktopState extends State<FeatureDesktop> {
+  final List<HomeCardModel> _models = [
+    HomeCardModel(
+        title: 'SeaSide Serenity Villa',
+        description:
+            "A stunning 4-bedroom, 3-bathroom villa in a peaceful suburban neighborhood.",
+        type: 'Villa',
+        price: '\$550,000',
+        imgPath: 'assets/imgs/img-1.png',
+        bedSize: 4,
+        bathSize: 3),
+    HomeCardModel(
+        title: 'Mountain View Retreat',
+        description:
+            "A cozy 3-bedroom cabin with breathtaking mountain views and modern amenities.",
+        type: 'Cabin',
+        price: '\$350,000',
+        imgPath: 'assets/imgs/img-2.png',
+        bedSize: 3,
+        bathSize: 2),
+    HomeCardModel(
+        title: 'Urban Oasis Apartment',
+        description:
+            "A luxurious 2-bedroom apartment in the heart of the city, featuring a rooftop pool.",
+        type: 'Apartment',
+        price: '\$750,000',
+        imgPath: 'assets/imgs/img-3.png',
+        bedSize: 2,
+        bathSize: 2),
+    HomeCardModel(
+        title: 'Mountain View Retreat',
+        description:
+            "A cozy 3-bedroom cabin with breathtaking mountain views and modern amenities.",
+        type: 'Cabin',
+        price: '\$800,000',
+        imgPath: 'assets/imgs/img-2.png',
+        bedSize: 4,
+        bathSize: 2),
+    HomeCardModel(
+        title: 'Urban Oasis Apartment',
+        description:
+            "A luxurious 2-bedroom apartment in the heart of the city, featuring a rooftop pool.",
+        type: 'Apartment',
+        price: '\$1,250,000',
+        imgPath: 'assets/imgs/img-3.png',
+        bedSize: 6,
+        bathSize: 2),
+  ];
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -63,149 +119,31 @@ class FeatureDesktop extends StatelessWidget {
               SizedBox(
                 height: 80.h,
               ),
-              Container(
-                width: 512.w,
-                padding: CustomUi.defPadding(vr: 40.h, hr: 40.w),
-                decoration: BoxDecoration(
-                    color: AppColor.g8,
-                    border: Border.all(color: AppColor.g15, width: 1),
-                    borderRadius: CustomUi.radiusCircular(radius: 12.w)),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(10.w),
-                      child: Image.asset(
-                        'assets/imgs/img-1.png',
-                        fit: BoxFit.cover,
-                        width: 432.w,
-                        height: 318.h,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    Text("Seaside Serenity Villa",
-                        style: CustomUi.defTextStyle(
-                            height: 1.5,
-                            fontSize: 24.sp,
-                            color: AppColor.white,
-                            fontWeight: FontWeight.w600)),
-                    Wrap(
-                      direction: Axis.horizontal,
-                      spacing: 1,
-                      children: [
-                        Text(
-                            "A stunning 4-bedroom, 3-bathroom villa in a peaceful suburban neighborhood... ",
-                            softWrap: true,
-                            style: CustomUi.defTextStyle(
-                                height: 1.5,
-                                fontSize: 18.sp,
-                                color: AppColor.g60,
-                                fontWeight: FontWeight.w400)),
-                        TextButton(
-                          onPressed: () {},
-                          child: Text('Read More',
-                              style: CustomUi.defTextStyle(
-                                  height: 1.5,
-                                  fontSize: 18.sp,
-                                  color: AppColor.white,
-                                  fontWeight: FontWeight.w400)),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      height: 30.h,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        _infoHome(
-                            title: '4-Bedrooms',
-                            assetPath: 'assets/icons/bed.svg'),
-                        _infoHome(
-                            title: '3-Bathroom',
-                            assetPath: 'assets/icons/bathroom.svg'),
-                        _infoHome(
-                            title: 'Villa', assetPath: 'assets/icons/villa.svg')
-                      ],
-                    ),
-                    SizedBox(
-                      height: 30.h,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('Price',
-                                style: CustomUi.defTextStyle(
-                                    height: 1.5,
-                                    fontSize: 18.sp,
-                                    color: AppColor.g60,
-                                    fontWeight: FontWeight.w400)),
-                            Text('\$550,000',
-                                style: CustomUi.defTextStyle(
-                                    height: 1.5,
-                                    fontSize: 24.sp,
-                                    color: AppColor.white,
-                                    fontWeight: FontWeight.w600))
-                          ],
-                        ),
-                        const Spacer(),
-                        CustomUi.defButton(
-                          title: 'View Property Details',
-                          onPressed: () {},
-                          radius: 10.w,
-                          fontSize: 18.sp,
-                          borderColor: Colors.transparent,
-                          fontWeight: FontWeight.w500,
-                          backgroundColor: AppColor.p60,
-                          textColor: AppColor.white,
-                          edgeInsets: CustomUi.defPadding(vr: 18.h, hr: 24.w),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 20.w,
-                    )
-                  ],
+              SizedBox(
+                width: w,
+                height: 800.h,
+                child: ScrollConfiguration(
+                  behavior: ScrollConfiguration.of(context).copyWith(
+                      dragDevices: {
+                        PointerDeviceKind.mouse,
+                        PointerDeviceKind.touch
+                      }),
+                  child: ListView.builder(
+                    itemCount: _models.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return HomeCard(homeCardModel: _models[index]);
+                    },
+                  ),
                 ),
+              ),
+              SizedBox(
+                height: 80.w,
               )
             ],
           ),
         )
       ],
-    );
-  }
-
-  Container _infoHome({required String title, required String assetPath}) {
-    return Container(
-      padding: CustomUi.defPadding(hr: 14.w, vr: 8.h),
-      decoration: BoxDecoration(
-          color: AppColor.g10,
-          border: Border.all(color: AppColor.g15, width: 1),
-          borderRadius: CustomUi.radiusCircular(radius: 28.w)),
-      child: Row(
-        children: [
-          SizedBox(
-            width: 17.w,
-            child: SvgPicture.asset(
-              assetPath,
-              fit: BoxFit.cover,
-            ),
-          ),
-          Text(title,
-              style: CustomUi.defTextStyle(
-                  height: 1.5,
-                  fontSize: 18.sp,
-                  color: AppColor.white,
-                  fontWeight: FontWeight.w500)),
-        ],
-      ),
     );
   }
 }
