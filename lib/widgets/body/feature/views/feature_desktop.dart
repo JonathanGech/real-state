@@ -5,8 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_state/utils/app_colors.dart';
 import 'package:real_state/utils/custom_ui.dart';
 import 'package:real_state/utils/size.dart';
-import 'package:real_state/widgets/body/feature/views/home_card.dart';
-import 'package:real_state/widgets/body/feature/views/home_card_model.dart';
+import 'package:real_state/widgets/body/feature/views/home_card_list_view.dart';
 
 class FeatureDesktop extends StatefulWidget {
   const FeatureDesktop({super.key});
@@ -16,53 +15,6 @@ class FeatureDesktop extends StatefulWidget {
 }
 
 class _FeatureDesktopState extends State<FeatureDesktop> {
-  final List<HomeCardModel> _models = [
-    HomeCardModel(
-        title: 'SeaSide Serenity Villa',
-        description:
-            "A stunning 4-bedroom, 3-bathroom villa in a peaceful suburban neighborhood.",
-        type: 'Villa',
-        price: '\$550,000',
-        imgPath: 'assets/imgs/img-1.png',
-        bedSize: 4,
-        bathSize: 3),
-    HomeCardModel(
-        title: 'Mountain View Retreat',
-        description:
-            "A cozy 3-bedroom cabin with breathtaking mountain views and modern amenities.",
-        type: 'Cabin',
-        price: '\$350,000',
-        imgPath: 'assets/imgs/img-2.png',
-        bedSize: 3,
-        bathSize: 2),
-    HomeCardModel(
-        title: 'Urban Oasis Apartment',
-        description:
-            "A luxurious 2-bedroom apartment in the heart of the city, featuring a rooftop pool.",
-        type: 'Apartment',
-        price: '\$750,000',
-        imgPath: 'assets/imgs/img-3.png',
-        bedSize: 2,
-        bathSize: 2),
-    HomeCardModel(
-        title: 'Mountain View Retreat',
-        description:
-            "A cozy 3-bedroom cabin with breathtaking mountain views and modern amenities.",
-        type: 'Cabin',
-        price: '\$800,000',
-        imgPath: 'assets/imgs/img-2.png',
-        bedSize: 4,
-        bathSize: 2),
-    HomeCardModel(
-        title: 'Urban Oasis Apartment',
-        description:
-            "A luxurious 2-bedroom apartment in the heart of the city, featuring a rooftop pool.",
-        type: 'Apartment',
-        price: '\$1,250,000',
-        imgPath: 'assets/imgs/img-3.png',
-        bedSize: 6,
-        bathSize: 2),
-  ];
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -73,6 +25,7 @@ class _FeatureDesktopState extends State<FeatureDesktop> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // ========================= Icon ======================
               SizedBox(
                 width: 50.w,
                 child: Image.asset(
@@ -83,12 +36,14 @@ class _FeatureDesktopState extends State<FeatureDesktop> {
               SizedBox(
                 height: 20.h,
               ),
+              // ========================= Title ======================
               Text('Featured Properties',
                   style: CustomUi.defTextStyle(
                       height: 1.5,
                       fontSize: 48.sp,
                       color: AppColor.white,
                       fontWeight: FontWeight.w600)),
+              // ========================= Description and button ======================
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -119,24 +74,8 @@ class _FeatureDesktopState extends State<FeatureDesktop> {
               SizedBox(
                 height: 80.h,
               ),
-              SizedBox(
-                width: w,
-                height: 800.h,
-                child: ScrollConfiguration(
-                  behavior: ScrollConfiguration.of(context).copyWith(
-                      dragDevices: {
-                        PointerDeviceKind.mouse,
-                        PointerDeviceKind.touch
-                      }),
-                  child: ListView.builder(
-                    itemCount: _models.length,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return HomeCard(homeCardModel: _models[index]);
-                    },
-                  ),
-                ),
-              ),
+              // ========================= List View ======================
+              HomeCardListView(),
               SizedBox(
                 height: 80.w,
               )
