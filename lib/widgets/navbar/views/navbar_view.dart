@@ -29,7 +29,7 @@ class NavbarView extends StatelessWidget {
                   Text('Discover Your Dream Property With Estatein ',
                       style: CustomUi.defTextStyle(
                         fontFamily: 'Urbanist',
-                        fontSize: 18.sp,
+                        fontSize: 22.sp,
                         color: AppColor.white,
                         fontWeight: FontWeight.w300,
                       )),
@@ -38,7 +38,7 @@ class NavbarView extends StatelessWidget {
                       child: Text(
                         'Learn more',
                         style: CustomUi.defTextStyle(
-                            fontSize: 18.sp,
+                            fontSize: 22.sp,
                             decoration: TextDecoration.underline,
                             decorationStyle: TextDecorationStyle.solid,
                             decorationColor: AppColor.white,

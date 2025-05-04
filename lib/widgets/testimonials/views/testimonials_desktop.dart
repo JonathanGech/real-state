@@ -1,20 +1,12 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_state/utils/app_colors.dart';
 import 'package:real_state/utils/custom_ui.dart';
-import 'package:real_state/utils/size.dart';
-import 'package:real_state/widgets/body/feature/views/home_card_list_view.dart';
+import 'package:real_state/widgets/testimonials/views/testimonials_card_list_view.dart';
 
-class FeatureDesktop extends StatefulWidget {
-  const FeatureDesktop({super.key});
+class TestimonialsDesktop extends StatelessWidget {
+  const TestimonialsDesktop({super.key});
 
-  @override
-  State<FeatureDesktop> createState() => _FeatureDesktopState();
-}
-
-class _FeatureDesktopState extends State<FeatureDesktop> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -37,7 +29,7 @@ class _FeatureDesktopState extends State<FeatureDesktop> {
                 height: 20.h,
               ),
               // ========================= Title ======================
-              Text('Featured Properties',
+              Text('What Our Clients Say',
                   style: CustomUi.defTextStyle(
                       height: 1.5,
                       fontSize: 48.sp,
@@ -50,19 +42,19 @@ class _FeatureDesktopState extends State<FeatureDesktop> {
                   SizedBox(
                       width: 1200.w,
                       child: Text(
-                        'Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein. Click "View Details" for more information.',
+                        "Read the success stories and heartfelt testimonials from our valued clients. Discover why they chose Estatein for their real estate needs.",
                         style: CustomUi.defTextStyle(
                             height: 1.5,
-                            fontSize: 18.sp,
+                            fontSize: 22.sp,
                             color: AppColor.g60,
                             fontWeight: FontWeight.w400),
                       )),
                   const Spacer(),
                   CustomUi.defButton(
-                    title: 'View all Properties',
+                    title: 'View all Testimonials',
                     onPressed: () {},
                     radius: 10.w,
-                    fontSize: 18.sp,
+                    fontSize: 22.sp,
                     borderColor: AppColor.g15,
                     fontWeight: FontWeight.w500,
                     backgroundColor: AppColor.g10,
@@ -75,9 +67,9 @@ class _FeatureDesktopState extends State<FeatureDesktop> {
                 height: 80.h,
               ),
               // ========================= List View ======================
-              HomeCardListView(),
+              const TestimonialsCardListView(),
               SizedBox(
-                height: 80.w,
+                height: 40.h,
               )
             ],
           ),

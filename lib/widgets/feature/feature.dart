@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:real_state/widgets/body/feature/views/feature_desktop.dart';
-import 'package:real_state/widgets/body/feature/views/feature_mobile.dart';
-import 'package:real_state/widgets/body/feature/views/feature_tablet.dart';
+import 'package:real_state/widgets/feature/views/feature_desktop.dart';
+import 'package:real_state/widgets/feature/views/feature_mobile.dart';
+import 'package:real_state/widgets/feature/views/feature_tablet.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class Feature extends StatelessWidget {

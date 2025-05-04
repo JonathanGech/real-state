@@ -5,9 +5,8 @@ import 'package:real_state/components/custom_list_view_builder.dart';
 import 'package:real_state/utils/app_colors.dart';
 import 'package:real_state/utils/custom_list_view_controller.dart';
 import 'package:real_state/utils/custom_ui.dart';
-import 'package:real_state/utils/size.dart';
-import 'package:real_state/widgets/body/feature/views/home_card.dart';
-import 'package:real_state/widgets/body/feature/views/home_card_model.dart';
+import 'package:real_state/widgets/feature/views/home_card.dart';
+import 'package:real_state/widgets/feature/views/home_card_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeCardListView extends StatefulWidget {
@@ -96,6 +95,9 @@ class _HomeCardListViewState extends State<HomeCardListView> {
             ),
           ),
         ),
+        SizedBox(
+          height: 30.h,
+        ),
         const Divider(
           color: AppColor.g15,
           thickness: 1,
@@ -114,7 +116,7 @@ class _HomeCardListViewState extends State<HomeCardListView> {
                           _customListViewController.visibleItemCount.toString(),
                       style: CustomUi.defTextStyle(
                           height: 1.5,
-                          fontSize: 18.sp,
+                          fontSize: 22.sp,
                           color: AppColor.white,
                           fontWeight: FontWeight.w400),
                     ),
@@ -122,7 +124,7 @@ class _HomeCardListViewState extends State<HomeCardListView> {
                       text: ' of ${_fewModels.length}',
                       style: CustomUi.defTextStyle(
                           height: 1.5,
-                          fontSize: 18.sp,
+                          fontSize: 22.sp,
                           color: AppColor.g60,
                           fontWeight: FontWeight.w400),
                     )

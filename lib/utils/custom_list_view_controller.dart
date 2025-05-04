@@ -23,6 +23,9 @@ class CustomListViewController extends ChangeNotifier {
     if (_firstVisibleIndex != first || _lastVisibleIndex != last) {
       _firstVisibleIndex = first.clamp(0, _itemCount - 1);
       _lastVisibleIndex = last.clamp(0, _itemCount);
+
+      // debugPrint(
+      //     'First: $_firstVisibleIndex, Last: $_lastVisibleIndex, Item Count: $_itemCount');
       notifyListeners();
     }
   }

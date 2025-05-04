@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:real_state/widgets/body/views/body_mobile.dart';
 import 'package:real_state/widgets/body/views/body_tablet.dart';
@@ -13,11 +12,7 @@ class Body extends StatelessWidget {
     return ScreenTypeLayout.builder(
       mobile: (context) => const BodyMobile(),
       tablet: (context) => const BodyTablet(),
-      desktop: (context) => ScreenUtilInit(
-          designSize: const Size(1920, 1080),
-          builder: (context, child) {
-            return const BodyDesktop();
-          }),
+      desktop: (context) => const BodyDesktop(),
     );
   }
 }

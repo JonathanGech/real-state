@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:real_state/utils/app_colors.dart';
 import 'package:real_state/utils/custom_ui.dart';
-import 'package:real_state/widgets/body/feature/views/home_card_model.dart';
+import 'package:real_state/widgets/feature/views/home_card_model.dart';
 
 class HomeCard extends StatelessWidget {
   const HomeCard({super.key, required this.homeCardModel});
@@ -28,7 +28,7 @@ class HomeCard extends StatelessWidget {
             boxShadow: ishoverd
                 ? [
                     BoxShadow(
-                      color: AppColor.w90.withOpacity(0.4),
+                      color: AppColor.w90.withValues(alpha: .4),
                       blurRadius: 20,
                       spreadRadius: -10,
                       offset: const Offset(0, 5),
@@ -55,7 +55,7 @@ class HomeCard extends StatelessWidget {
               Text(homeCardModel.title,
                   style: CustomUi.defTextStyle(
                       height: 1.5,
-                      fontSize: 24.sp,
+                      fontSize: 28.sp,
                       color: AppColor.white,
                       fontWeight: FontWeight.w600)),
               Wrap(
@@ -68,7 +68,7 @@ class HomeCard extends StatelessWidget {
                       softWrap: true,
                       style: CustomUi.defTextStyle(
                           height: 1.5,
-                          fontSize: 18.sp,
+                          fontSize: 22.sp,
                           color: AppColor.g60,
                           fontWeight: FontWeight.w400)),
                   TextButton(
@@ -76,7 +76,7 @@ class HomeCard extends StatelessWidget {
                     child: Text('Read More',
                         style: CustomUi.defTextStyle(
                             height: 1.5,
-                            fontSize: 18.sp,
+                            fontSize: 22.sp,
                             color: AppColor.p70,
                             fontWeight: FontWeight.w400)),
                   )
@@ -110,13 +110,13 @@ class HomeCard extends StatelessWidget {
                       Text('Price',
                           style: CustomUi.defTextStyle(
                               height: 1.5,
-                              fontSize: 18.sp,
+                              fontSize: 22.sp,
                               color: AppColor.g60,
                               fontWeight: FontWeight.w400)),
                       Text(homeCardModel.price,
                           style: CustomUi.defTextStyle(
                               height: 1.5,
-                              fontSize: 24.sp,
+                              fontSize: 28.sp,
                               color: AppColor.white,
                               fontWeight: FontWeight.w600))
                     ],
@@ -126,7 +126,7 @@ class HomeCard extends StatelessWidget {
                     title: 'View Property Details',
                     onPressed: () {},
                     radius: 10.w,
-                    fontSize: 18.sp,
+                    fontSize: 22.sp,
                     borderColor: Colors.transparent,
                     fontWeight: FontWeight.w500,
                     backgroundColor: AppColor.p60,
@@ -149,7 +149,7 @@ class HomeCard extends StatelessWidget {
     return ConstrainedBox(
       constraints: BoxConstraints(maxWidth: 150.w),
       child: Container(
-        padding: CustomUi.defPadding(hr: 10.w, vr: 8.h),
+        padding: CustomUi.defPadding(hr: 8.w, vr: 8.h),
         alignment: Alignment.center,
         decoration: BoxDecoration(
             color: AppColor.g10,
@@ -159,7 +159,7 @@ class HomeCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              width: 17.w,
+              width: 15.w,
               child: SvgPicture.asset(
                 assetPath,
                 fit: BoxFit.cover,

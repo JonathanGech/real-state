@@ -84,7 +84,7 @@ class NavbarDesktop extends StatelessWidget {
               CustomUi.defButton(
                 title: matchNavbarItem(NavbarItems.contact),
                 radius: 10.w,
-                fontSize: 18.sp,
+                fontSize: 22.sp,
                 borderColor: AppColor.g15,
                 fontWeight: FontWeight.w500,
                 fontFamily: 'Urbanist',
