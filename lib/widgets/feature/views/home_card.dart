@@ -99,7 +99,7 @@ class HomeCard extends StatelessWidget {
                       assetPath: 'assets/icons/villa.svg')
                 ],
               ),
-              Spacer(),
+              const Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [

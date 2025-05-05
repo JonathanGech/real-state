@@ -9,9 +9,11 @@ class NavItems extends StatelessWidget {
       {super.key,
       required this.text,
       required this.selected,
+      this.isTablet = false,
       required this.ontap});
   final String text;
   final bool selected;
+  final bool? isTablet;
   final VoidCallback ontap;
 
   @override
@@ -20,13 +22,13 @@ class NavItems extends StatelessWidget {
       onTap: ontap,
       child: HoverOver(builder: (ishover) {
         return Padding(
-          padding: const EdgeInsets.all(2.0),
+          padding: const EdgeInsets.only(right: .0),
           child: AnimatedContainer(
-            duration: Duration(seconds: 1),
-            padding: CustomUi.defPadding(vr: 14.h, hr: 24.w),
+            duration: const Duration(seconds: 1),
+            padding: CustomUi.defPadding(vr: isTablet!? 12.h: 14.h, hr: isTablet!? 20.w: 24.w),
             decoration: BoxDecoration(
               color: selected ? AppColor.g8 : AppColor.g10,
-              borderRadius: CustomUi.radiusCircular(radius: 10.w),
+              borderRadius: CustomUi.radiusCircular(radius: isTablet!? 8.w: 10.w),
               border: selected
                   ? Border.all(
                       color: AppColor.g15,

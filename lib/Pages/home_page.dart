@@ -21,7 +21,9 @@ class HomePage extends StatelessWidget {
           Navbar(),
           Expanded(
               child: SingleChildScrollView(
+                
                   child: Column(
+
             children: [
               // ========================= Body section ======================
               Body(),

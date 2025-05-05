@@ -6,7 +6,7 @@ import 'package:real_state/utils/size.dart';
 import 'package:real_state/widgets/navbar/bloc/navbar_bloc.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-void main() {
+void main() async{
   ResponsiveSizingConfig.instance.setCustomBreakpoints(
       const ScreenBreakpoints(desktop: 1025, tablet: 600, watch: 200));
   runApp(MultiBlocProvider(

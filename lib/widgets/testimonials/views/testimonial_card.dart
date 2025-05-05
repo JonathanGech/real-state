@@ -31,7 +31,7 @@ class TestimonialCard extends StatelessWidget {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   )
-                : LinearGradient(colors: [AppColor.g8, AppColor.g8]),
+                : const LinearGradient(colors: [AppColor.g8, AppColor.g8]),
             border: Border.all(
                 color: ishovered ? AppColor.p60 : AppColor.g15,
                 width: ishovered ? 3 : 1),

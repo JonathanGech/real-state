@@ -15,7 +15,7 @@ class QuestionCard extends StatelessWidget {
       padding: EdgeInsets.only(right: 10.w),
       child: HoverOver(builder: (ishovered) {
         return AnimatedContainer(
-          duration: Duration(milliseconds: 300),
+          duration: const Duration(milliseconds: 300),
           width: 525.w,
           padding: CustomUi.defPadding(vr: 40.h, hr: 30.w),
           decoration: BoxDecoration(
@@ -58,7 +58,7 @@ class QuestionCard extends StatelessWidget {
                     color: AppColor.g60,
                     fontWeight: FontWeight.w400),
               ),
-              Spacer(),
+              const Spacer(),
               CustomUi.defButton(
                   title: 'Read More',
                   onPressed: questionCardModel.onTap,

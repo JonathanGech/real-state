@@ -20,7 +20,7 @@ class FooterDesktop extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Email section
-              Container(
+              SizedBox(
                 width: 538.w,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,

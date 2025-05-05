@@ -51,7 +51,7 @@ class NavbarView extends StatelessWidget {
                   padding: CustomUi.defPadding(vr: 0),
                   child: IconButton(
                       onPressed: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.cancel,
                         color: AppColor.white,
                         size: 18,

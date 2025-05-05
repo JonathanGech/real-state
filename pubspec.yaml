@@ -7,13 +7,13 @@ environment:
   sdk: ">=3.5.3  <=4.0.0"
 
 dependencies:
+  flutter:
+    sdk: flutter
   bloc: ^9.0.0
   dev_utils:
     git:
       url: git@github.com:JonathanGech/flutter_dev_utils.git
       ref: main
-  flutter:
-    sdk: flutter
   flutter_bloc: ^9.1.0
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.0.17
