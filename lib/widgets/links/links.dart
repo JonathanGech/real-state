@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:real_state/utils/responsive_builder.dart';
 import 'package:real_state/widgets/links/views/links_desktop.dart';
 import 'package:real_state/widgets/links/views/links_mobile.dart';
-import 'package:real_state/widgets/links/views/links_tablet.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
 class Links extends StatelessWidget {
   const Links({super.key});
@@ -11,7 +10,7 @@ class Links extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
       mobile: (context) => const LinksMobile(),
-      tablet: (context) => const LinksTablet(),
+      tablet: (context) => const LinksDesktop(),
       desktop: (context) => const LinksDesktop(),
     );
   }

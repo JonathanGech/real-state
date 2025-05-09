@@ -19,19 +19,19 @@ class LinksDesktop extends StatelessWidget {
             color: AppColor.g8,
             border: Border.all(color: AppColor.g15, width: 4),
           ),
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              LinksView(
+              LinksView.desktop(
                   title: 'Find Your Dream Home',
                   assetPath: 'assets/imgs/icons/icon-1.png'),
-              LinksView(
+              LinksView.desktop(
                   title: 'Unlock Property Value',
                   assetPath: 'assets/imgs/icons/icon-2.png'),
-              LinksView(
+              LinksView.desktop(
                   title: 'Effertless Property Management',
                   assetPath: 'assets/imgs/icons/icon-3.png'),
-              LinksView(
+              LinksView.desktop(
                   title: 'Smart Investment Informed Decisions',
                   assetPath: 'assets/imgs/icons/icon-1.png'),
             ],

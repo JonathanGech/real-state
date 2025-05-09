@@ -8,24 +8,40 @@ class LinksView extends StatelessWidget {
     super.key,
     required this.title,
     required this.assetPath,
+    this.padding,
+    this.borderRadius,
+    this.width,
+    this.height,
+    this.logoWidth,
+    this.logoHeight,
+    this.fontsize,
   });
   final String title;
   final String assetPath;
+
+  final EdgeInsets? padding;
+
+  final BorderRadius? borderRadius;
+  final double? width;
+  final double? height;
+  final double? logoWidth;
+  final double? logoHeight;
+  final double? fontsize;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: CustomUi.defPadding(vr: 0, hr: 10.w),
       child: Container(
-        width: 430.w,
-        height: 215.h,
-        padding: CustomUi.defPadding(vr: 40.h, hr: 20.w),
+        width: width!,
+        height: height!,
+        padding: padding,
         decoration: BoxDecoration(
             color: AppColor.g10,
             border: Border.all(color: AppColor.g15),
-            borderRadius: BorderRadius.circular(12.w)),
+            borderRadius: borderRadius),
         child: Stack(
-          fit: StackFit.expand,
+          
           children: [
             Align(
               alignment: const Alignment(0.9, -0.9),
@@ -42,8 +58,8 @@ class LinksView extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(
-                    width: 82.w,
-                    height: 82.h,
+                    width: logoWidth,
+                    height: logoHeight,
                     child: Image.asset(assetPath, fit: BoxFit.cover),
                   ),
                   SizedBox(
@@ -52,7 +68,7 @@ class LinksView extends StatelessWidget {
                   Text(title,
                       style: CustomUi.defTextStyle(
                           height: 1.5,
-                          fontSize: 20.sp,
+                          fontSize: fontsize,
                           color: AppColor.white,
                           fontWeight: FontWeight.w600)),
                 ],
@@ -61,6 +77,39 @@ class LinksView extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  factory LinksView.tablet({
+    required String title,
+    required String assetPath,
+  }) {
+    return LinksView(
+      title: title,
+      assetPath: assetPath,
+      padding: CustomUi.defPadding(vr: 30.h, hr: 16.w),
+      borderRadius: BorderRadius.circular(18.w),
+      width: 348.w,
+      height: 160.h,
+      logoWidth: 60.w,
+      logoHeight: 60.h,
+      fontsize: 16.sp,
+    );
+  }
+  factory LinksView.desktop({
+    required String title,
+    required String assetPath,
+  }) {
+    return LinksView(
+      title: title,
+      assetPath: assetPath,
+      padding: CustomUi.defPadding(vr: 40.h, hr: 20.w),
+      borderRadius: BorderRadius.circular(12.w),
+      width: 430.w,
+      height: 215.h,
+      logoWidth: 82.w,
+      logoHeight: 82.h,
+      fontsize: 20.sp,
     );
   }
 }

@@ -40,21 +40,21 @@ final List<NavbarItems> navItems = const [
   Widget build(BuildContext context) {
     return Column(
       children: [
-        NavbarView(),
+        const NavbarView(),
 
         // ========================= Nav section ======================
         Container(
-          height: 99.w,
+          height: 77.h,
           width: w,
           padding: CustomUi.defPadding(vr: 14.h, hr: 80.w),
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: AppColor.g10,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                width: 160.w,
+                width: 113.w,
                 child: Image.asset(
                   'assets/imgs/logo.png',
                   fit: BoxFit.cover,
@@ -66,7 +66,7 @@ final List<NavbarItems> navItems = const [
                   return Row(
                     children: [
                       ...navItems.map((e) {
-                        return NavItems(
+                        return NavItems.tablet(
                           text: matchNavbarItem(e),
                           selected: state.selectedItem == e,
                           ontap: () {
@@ -83,16 +83,16 @@ final List<NavbarItems> navItems = const [
               CustomUi.defButton(
                 title: matchNavbarItem(NavbarItems.contact),
                 radius: 8.w,
-                fontSize: 12.sp,
+                fontSize: 14.sp,
                 borderColor: AppColor.g15,
                 fontWeight: FontWeight.w500,
                 fontFamily: 'Urbanist',
                 backgroundColor: AppColor.g8,
                 textColor: AppColor.white,
-                edgeInsets: CustomUi.defPadding(vr: 16.w, hr: 24.w),
+                edgeInsets: CustomUi.defPadding(vr: 14.h, hr: 20.w),
                 onPressed: () {
                   context.read<NavbarBloc>().add(
-                      NavbarInitialEvent(selectedItem: NavbarItems.contact));
+                      const NavbarInitialEvent(selectedItem: NavbarItems.contact));
                 },
               ),
             ],

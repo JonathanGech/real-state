@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';	  
-import 'package:responsive_builder/responsive_builder.dart';
+import 'package:flutter/material.dart';
+import 'package:real_state/utils/responsive_builder.dart';	  
 import 'package:real_state/widgets/questions/views/questions_mobile.dart';
 import 'package:real_state/widgets/questions/views/questions_tablet.dart';
 import 'package:real_state/widgets/questions/views/questions_desktop.dart';

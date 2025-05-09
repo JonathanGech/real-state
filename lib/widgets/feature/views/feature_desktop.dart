@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_state/utils/app_colors.dart';
 import 'package:real_state/utils/custom_ui.dart';
+import 'package:real_state/utils/responsive_builder.dart';
 import 'package:real_state/widgets/feature/views/home_card_list_view.dart';
 
 class FeatureDesktop extends StatefulWidget {
@@ -24,7 +25,7 @@ class _FeatureDesktopState extends State<FeatureDesktop> {
             children: [
               // ========================= Icon ======================
               SizedBox(
-                width: 50.w,
+                width: 50.w.clamp(30, 50),
                 child: Image.asset(
                   'assets/imgs/icons/more.png',
                   fit: BoxFit.cover,
@@ -72,7 +73,7 @@ class _FeatureDesktopState extends State<FeatureDesktop> {
                 height: 80.h,
               ),
               // ========================= List View ======================
-              const HomeCardListView(),
+              const HomeCardListView(deviceType: DeviceScreenType.desktop,),
               SizedBox(
                 height: 40.h,
               )

@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';	  
-import 'package:responsive_builder/responsive_builder.dart';
+import 'package:flutter/material.dart';
+import 'package:real_state/utils/responsive_builder.dart';	  
 import 'package:real_state/widgets/footer/views/footer_mobile.dart';
 import 'package:real_state/widgets/footer/views/footer_tablet.dart';
 import 'package:real_state/widgets/footer/views/footer_desktop.dart';

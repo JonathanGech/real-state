@@ -9,11 +9,14 @@ class NavItems extends StatelessWidget {
       {super.key,
       required this.text,
       required this.selected,
-      this.isTablet = false,
-      required this.ontap});
+      required this.ontap,
+      this.edgeInsets,
+      this.radius, this.fontSize});
   final String text;
   final bool selected;
-  final bool? isTablet;
+  final EdgeInsets? edgeInsets;
+  final BorderRadius? radius;
+  final double? fontSize;
   final VoidCallback ontap;
 
   @override
@@ -22,13 +25,13 @@ class NavItems extends StatelessWidget {
       onTap: ontap,
       child: HoverOver(builder: (ishover) {
         return Padding(
-          padding: const EdgeInsets.only(right: .0),
+          padding: const EdgeInsets.only(right: 10.0),
           child: AnimatedContainer(
             duration: const Duration(seconds: 1),
-            padding: CustomUi.defPadding(vr: isTablet!? 12.h: 14.h, hr: isTablet!? 20.w: 24.w),
+            padding: edgeInsets,
             decoration: BoxDecoration(
               color: selected ? AppColor.g8 : AppColor.g10,
-              borderRadius: CustomUi.radiusCircular(radius: isTablet!? 8.w: 10.w),
+              borderRadius:radius,
               border: selected
                   ? Border.all(
                       color: AppColor.g15,
@@ -39,11 +42,38 @@ class NavItems extends StatelessWidget {
             child: Text(
               text,
               style: CustomUi.defTextStyle(
-                  fontSize: ishover ? 18.sp : 16.sp, color: AppColor.white),
+                  fontSize: ishover ? (fontSize ?? 0).sp : ((8 / 9) * (fontSize ?? 0)).sp, color: AppColor.white),
             ),
           ),
         );
       }),
+    );
+  }
+
+  factory NavItems.desktop(
+      {required String text,
+      required bool selected,
+      required VoidCallback ontap}) {
+    return NavItems(
+      text: text,
+      selected: selected,
+      ontap: ontap,
+      edgeInsets: CustomUi.defPadding(vr: 14.h, hr: 24.w),
+      radius:  CustomUi.radiusCircular(radius: 10.w),
+      fontSize: 18,
+    );
+  }
+  factory NavItems.tablet(
+      {required String text,
+      required bool selected,
+      required VoidCallback ontap}) {
+    return NavItems(
+      text: text,
+      selected: selected,
+      ontap: ontap,
+      edgeInsets: CustomUi.defPadding(vr: 12.h, hr: 20.w),
+      radius:  CustomUi.radiusCircular(radius: 8.w),
+      fontSize: 14,
     );
   }
 }

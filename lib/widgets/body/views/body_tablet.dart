@@ -12,13 +12,12 @@ class BodyTablet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log('wd: $w');
     return Column(
       children: [
         // ========================= Discover section ======================
         SizedBox(
           width: w,
-          height: 670.h,
+          height: 622.h,
           child: Stack(
             children: [
               Row(
@@ -26,7 +25,7 @@ class BodyTablet extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    width: w * 0.45,
+                    width: w * 0.42,
                     child: Padding(
                       padding: EdgeInsets.only(
                           top: 98.h, bottom: 98.h, left: 80.w),
@@ -85,6 +84,7 @@ class BodyTablet extends StatelessWidget {
                                 title: 'Browse Properties',
                                 radius: 8.w,
                                 fontSize: 14.sp,
+                                width: 192.w,
                                 fontWeight: FontWeight.w400,
                                 borderColor: Colors.transparent,
                                 fontFamily: 'Urbanist',
@@ -99,17 +99,17 @@ class BodyTablet extends StatelessWidget {
                           SizedBox(
                             height: 50.h,
                           ),
-                          const Row(
+                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Info(title: '200+', subtitle: 'Happy Clients', isTablet: true,),
-                              Info(
+                              Info.tablet(title: '200+', subtitle: 'Happy Clients', ),
+                              Info.tablet(
                                   title: '10k+',
-                                  subtitle: 'Properties for Clients', isTablet: true,),
-                              Info(
+                                  subtitle: 'Properties for Clients',),
+                              Info.tablet(
                                   title: '16+',
-                                  subtitle: 'Years of Experience', isTablet: true,),
+                                  subtitle: 'Years of Experience',),
                             ],
                           )
                         ],
@@ -120,21 +120,18 @@ class BodyTablet extends StatelessWidget {
                   Expanded(child: Image.asset(
                     'assets/imgs/bg-1.png',
                     fit: BoxFit.contain,
+                    height: 622.h,
                   ))
                 ],
               ),
               Align(
-                alignment:  Alignment(0, -0.7),
+                alignment:  const Alignment(0, -0.7),
                 child: Image.asset('assets/imgs/logo-center.png',
                     width: 129.w, fit: BoxFit.cover),
               )
             ],
           ),
         ),
-
-        SizedBox(
-          height: 40.h,
-        )
       ],
     );
   }

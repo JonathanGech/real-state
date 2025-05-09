@@ -45,7 +45,7 @@ class NavbarDesktop extends StatelessWidget {
 
         // ========================= Nav section ======================
         Container(
-          height: 99.w,
+          height: 99.h.clamp(70, 110),
           width: w,
           padding: CustomUi.defPadding(vr: 14.h, hr: 162.w),
           decoration: BoxDecoration(
@@ -55,7 +55,7 @@ class NavbarDesktop extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                width: 160.w,
+                width: 160.w.clamp(110, 200),
                 child: Image.asset(
                   'assets/imgs/logo.png',
                   fit: BoxFit.cover,
@@ -67,7 +67,7 @@ class NavbarDesktop extends StatelessWidget {
                   return Row(
                     children: [
                       ...navItems.map((e) {
-                        return NavItems(
+                        return NavItems.desktop(
                           text: matchNavbarItem(e),
                           selected: state.selectedItem == e,
                           ontap: () {
