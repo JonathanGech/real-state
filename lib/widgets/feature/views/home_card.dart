@@ -16,13 +16,21 @@ class HomeCard extends StatelessWidget {
       required this.radius,
       this.titleFs,
       this.fontsize,
-      required this.edgeInsets});
+      required this.edgeInsets,
+      required this.aspectRation,
+      required this.flex,
+      required this.height,
+      required this.width});
   final HomeCardModel homeCardModel;
   final EdgeInsets paddingContianer;
   final BorderRadius radius;
   final double? titleFs;
   final double? fontsize;
+  final double aspectRation;
   final EdgeInsets edgeInsets;
+  final int flex;
+  final double height;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +63,7 @@ class HomeCard extends StatelessWidget {
             // shrinkWrap: true,
             children: [
               AspectRatio(
-                aspectRatio: 16 / 9,
+                aspectRatio: aspectRation,
                 // constraints:
                 //     BoxConstraints(maxHeight: 100, minWidth: 200 - 30.w),
                 child: ClipRRect(
@@ -90,7 +98,8 @@ class HomeCard extends StatelessWidget {
                           fontWeight: FontWeight.w400)),
                   TextButton(
                     style: TextButton.styleFrom(
-                      padding: EdgeInsets.symmetric(horizontal: 10.sl, vertical: 5.sl),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 10.sl, vertical: 5.sl),
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       minimumSize: Size.zero,
                       alignment: Alignment.center,
@@ -98,7 +107,7 @@ class HomeCard extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.w),
                       ),
-                      ),
+                    ),
                     onPressed: () {},
                     child: Text('Read More',
                         style: CustomUi.defTextStyle(
@@ -111,8 +120,9 @@ class HomeCard extends StatelessWidget {
               ),
               const Spacer(),
               // SizedBox(height: 20.sl,),
-              SizedBox(
-                height: 50.sl,
+              Flexible(
+                fit: FlexFit.tight,
+                flex: 2,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
@@ -121,17 +131,26 @@ class HomeCard extends StatelessWidget {
                   // runSpacing: 5,
                   children: [
                     _infoHome(
-                      context: context,
+                        context: context,
                         title: '${homeCardModel.bedSize}-Bedrooms',
-                        widget: SvgPicture.asset('assets/icons/bed.svg' ,width: 25.sl, fit: BoxFit.fill,)),
+                        widget: SvgPicture.asset(
+                          'assets/icons/bed.svg',
+                          width: width,
+                          fit: BoxFit.fill,
+                        )),
                     _infoHome(
-                      context: context,
+                        context: context,
                         title: '${homeCardModel.bathSize}-Bathroom',
-                        widget: SvgPicture.asset('assets/icons/bathroom.svg', width: 25.sl,fit: BoxFit.fill,)),
+                        widget: SvgPicture.asset(
+                          'assets/icons/bathroom.svg',
+                          width: width,
+                          fit: BoxFit.fill,
+                        )),
                     _infoHome(
-                      context: context,
+                        context: context,
                         title: homeCardModel.type,
-                        widget: SvgPicture.asset('assets/icons/villa.svg' ,width: 25.sl, fit: BoxFit.fill))
+                        widget: SvgPicture.asset('assets/icons/villa.svg',
+                            width: width, fit: BoxFit.fill))
                   ],
                 ),
               ),
@@ -157,9 +176,9 @@ class HomeCard extends StatelessWidget {
                               fontWeight: FontWeight.w600))
                     ],
                   ),
-                  const Spacer(flex: 1,),
+                  const Spacer(),
                   Flexible(
-                    flex: 3,
+                    flex: flex,
                     child: AspectRatio(
                       aspectRatio: 3.5,
                       child: CustomUi.defButton(
@@ -171,8 +190,7 @@ class HomeCard extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         backgroundColor: AppColor.p60,
                         textColor: AppColor.white,
-                        
-                        edgeInsets: EdgeInsets.symmetric(horizontal: 5.sl, vertical: 5.sl),
+                        edgeInsets: EdgeInsets.zero,
                       ),
                     ),
                   ),
@@ -193,15 +211,15 @@ class HomeCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 5.0),
       child: IntrinsicWidth(
-
         child: IntrinsicHeight(
           child: Container(
-            padding: CustomUi.defPadding(hr: 8.sl, vr: 8.sl),
+            
+            padding: EdgeInsets.symmetric(vertical: 5.sl, horizontal: 10.sl),
             alignment: Alignment.center,
             decoration: BoxDecoration(
                 color: AppColor.g10,
                 border: Border.all(color: AppColor.g15, width: 1),
-                borderRadius: CustomUi.radiusCircular(radius: 24.w)),
+                borderRadius: CustomUi.radiusCircular(radius: 24.r)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -231,6 +249,10 @@ class HomeCard extends StatelessWidget {
         edgeInsets: CustomUi.defPadding(vr: 40.sl, hr: 30.sl),
         paddingContianer: CustomUi.defPadding(vr: 18.sl, hr: 24.sl),
         radius: CustomUi.radiusCircular(radius: 12.w),
+        aspectRation: 16 / 9,
+        flex: 3,
+        height: 50.sl,
+        width: 25.sl,
         fontsize: 22.sp,
         titleFs: 28.sp);
   }
@@ -240,6 +262,10 @@ class HomeCard extends StatelessWidget {
         edgeInsets: CustomUi.defPadding(vr: 30.sl, hr: 20.sl),
         paddingContianer: CustomUi.defPadding(vr: 16.sl, hr: 20.sl),
         radius: CustomUi.radiusCircular(radius: 12.r),
+        aspectRation: 16 / 9,
+        flex: 3,
+        height: 50.sl,
+        width: 25.sl,
         fontsize: 16.sp,
         titleFs: 20.sp);
   }
@@ -249,6 +275,10 @@ class HomeCard extends StatelessWidget {
         edgeInsets: CustomUi.defPadding(vr: 24.sl, hr: 24.sl),
         paddingContianer: CustomUi.defPadding(vr: 16.sl, hr: 20.sl),
         radius: CustomUi.radiusCircular(radius: 10.r),
+        aspectRation: 3,
+        height: 50.h.w,
+        width: 25.h.w,
+        flex: 1,
         fontsize: 14.sp,
         titleFs: 18.sp);
   }

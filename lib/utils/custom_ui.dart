@@ -62,32 +62,37 @@ abstract class CustomUi {
           FontWeight? fontWeight,
           String? fontFamily,
           Duration? animationDuration,
+          MouseCursor? mousecursor,
           TextAlign? textAlign,
           EdgeInsets? edgeInsets}) =>
       GestureDetector(
         onTap: onPressed,
-        child: AnimatedContainer(
-          width: width,
-          height: height,
-          duration: animationDuration ?? const Duration(milliseconds: 300),
-          padding: edgeInsets ?? defPadding(),
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: backgroundColor ?? primaryColor,
-            borderRadius: radiusCircular(radius: radius),
-            border: Border.all(
-              color: borderColor ?? Colors.transparent,
-              width: 1,
+        child: MouseRegion(
+          cursor: mousecursor ?? SystemMouseCursors.click,
+          child: AnimatedContainer(
+            width: width,
+            height: height,
+                 
+            duration: animationDuration ?? const Duration(milliseconds: 300),
+            padding: edgeInsets ?? defPadding(),
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: backgroundColor ?? primaryColor,
+              borderRadius: radiusCircular(radius: radius),
+              border: Border.all(
+                color: borderColor ?? Colors.transparent,
+                width: 1,
+              ),
             ),
-          ),
-          child: Text(
-            title,
-            textAlign: textAlign,
-            style: defTextStyle(
-              color: textColor,
-              fontSize: fontSize,
-              fontWeight: fontWeight,
-              fontFamily: fontFamily,
+            child: Text(
+              title,
+              textAlign: textAlign,
+              style: defTextStyle(
+                color: textColor,
+                fontSize: fontSize,
+                fontWeight: fontWeight,
+                fontFamily: fontFamily,
+              ),
             ),
           ),
         ),
