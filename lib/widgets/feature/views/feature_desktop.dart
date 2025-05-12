@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_state/utils/app_colors.dart';
 import 'package:real_state/utils/custom_ui.dart';
 import 'package:real_state/utils/responsive_builder.dart';
+import 'package:real_state/utils/size.dart';
 import 'package:real_state/widgets/feature/views/home_card_list_view.dart';
 
 class FeatureDesktop extends StatefulWidget {
@@ -56,21 +57,27 @@ class _FeatureDesktopState extends State<FeatureDesktop> {
                             fontWeight: FontWeight.w400),
                       )),
                   const Spacer(),
-                  CustomUi.defButton(
-                    title: 'View all Properties',
-                    onPressed: () {},
-                    radius: 10.w,
-                    fontSize: 22.sp,
-                    borderColor: AppColor.g15,
-                    fontWeight: FontWeight.w500,
-                    backgroundColor: AppColor.g10,
-                    textColor: AppColor.white,
-                    edgeInsets: CustomUi.defPadding(vr: 18.w, hr: 24.w),
+                  Flexible(
+                    flex: 3,
+                    child: AspectRatio(
+                      aspectRatio: 3.5,
+                      child: CustomUi.defButton(
+                        title: 'View all Properties',
+                        onPressed: () {},
+                        radius: 10.w,
+                        fontSize: 22.sp,
+                        borderColor: AppColor.g15,
+                        fontWeight: FontWeight.w500,
+                        backgroundColor: AppColor.g10,
+                        textColor: AppColor.white,
+                        edgeInsets: CustomUi.defPadding(vr: 18.sl, hr: 24.sl),
+                      ),
+                    ),
                   )
                 ],
               ),
               SizedBox(
-                height: 80.h,
+                height: 50.h,
               ),
               // ========================= List View ======================
               const HomeCardListView(deviceType: DeviceScreenType.desktop,),

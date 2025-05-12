@@ -71,6 +71,7 @@ abstract class CustomUi {
           height: height,
           duration: animationDuration ?? const Duration(milliseconds: 300),
           padding: edgeInsets ?? defPadding(),
+          alignment: Alignment.center,
           decoration: BoxDecoration(
             color: backgroundColor ?? primaryColor,
             borderRadius: radiusCircular(radius: radius),

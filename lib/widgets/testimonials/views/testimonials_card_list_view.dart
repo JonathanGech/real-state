@@ -87,9 +87,9 @@ class _TestimonialsCardListViewState extends State<TestimonialsCardListView> {
   Widget build(BuildContext context) {
     switch (widget.deviceType) {
       case DeviceScreenType.watch:
-        return SizedBox();
+        return const SizedBox();
       case DeviceScreenType.mobile:
-        return SizedBox();
+        return const SizedBox();
       case DeviceScreenType.tablet:
         return _tablet();
       case DeviceScreenType.desktop:

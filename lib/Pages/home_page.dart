@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:real_state/utils/app_colors.dart';
-import 'package:real_state/widgets/body/body.dart';
 import 'package:real_state/widgets/feature/feature.dart';
-import 'package:real_state/widgets/footer/footer.dart';
-import 'package:real_state/widgets/links/links.dart';
-import 'package:real_state/widgets/navbar/navbar.dart';
-import 'package:real_state/widgets/questions/questions.dart';
-import 'package:real_state/widgets/start/start.dart';
-import 'package:real_state/widgets/testimonials/testimonials.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -18,7 +11,7 @@ class HomePage extends StatelessWidget {
       backgroundColor: AppColor.g8,
       body: Column(
         children: [
-          Navbar(),
+          // Navbar(),
           Expanded(
               child: SingleChildScrollView(
                 
@@ -26,19 +19,19 @@ class HomePage extends StatelessWidget {
 
             children: [
               // ========================= Body section ======================
-              Body(),
+              // Body(),
               // ========================= Links section ======================
-              Links(),
+              // Links(),
               // ========================= Feature section ======================
               Feature(),
               // ========================= Testimonials section ======================
-              Testimonials(),
+              // Testimonials(),
               // ========================= Questions section ======================
-              Questions(),
+              // Questions(),
               // ========================= Start section ======================
-              Start(),
+              // Start(),
               // ========================= Footer section ======================
-              Footer(),
+              // Footer(),
             ],
           )))
         ],

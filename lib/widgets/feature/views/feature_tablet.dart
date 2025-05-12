@@ -56,16 +56,22 @@ class _FeatureTabletState extends State<FeatureTablet> {
                             fontWeight: FontWeight.w400),
                       )),
                   const Spacer(),
-                  CustomUi.defButton(
-                    title: 'View all Properties',
-                    onPressed: () {},
-                    radius: 8.w,
-                    fontSize: 14.sp,
-                    borderColor: AppColor.g15,
-                    fontWeight: FontWeight.w500,
-                    backgroundColor: AppColor.g10,
-                    textColor: AppColor.white,
-                    edgeInsets: CustomUi.defPadding(vr: 14.h, hr: 20.w),
+                  Flexible(
+                    flex: 3,
+                    child: AspectRatio(
+                      aspectRatio:  3.5,
+                      child: CustomUi.defButton(
+                        title: 'View all Properties',
+                        onPressed: () {},
+                        radius: 8.w,
+                        fontSize: 14.sp,
+                        borderColor: AppColor.g15,
+                        fontWeight: FontWeight.w500,
+                        backgroundColor: AppColor.g10,
+                        textColor: AppColor.white,
+                        edgeInsets: CustomUi.defPadding(vr: 14.h, hr: 20.w),
+                      ),
+                    ),
                   )
                 ],
               ),

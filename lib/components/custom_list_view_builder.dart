@@ -66,6 +66,10 @@ class _CustomListViewBuilderState extends State<CustomListViewBuilder> {
       controller: widget.controller.scrollController,
       itemCount: widget.itemCount,
       itemBuilder: widget.itemBuilder,
+      itemExtent: widget.itemWidth,
+      shrinkWrap: true,
+      
+      
     );
   }
 
