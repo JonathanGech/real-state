@@ -76,7 +76,7 @@ class _FeatureTabletState extends State<FeatureTablet> {
                 ],
               ),
               SizedBox(
-                height: 60.h,
+                height: 40.h,
               ),
               // ========================= List View ======================
               const HomeCardListView(deviceType: DeviceScreenType.tablet,),

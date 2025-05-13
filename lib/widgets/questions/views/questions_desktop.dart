@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_state/utils/app_colors.dart';
 import 'package:real_state/utils/custom_ui.dart';
+import 'package:real_state/utils/responsive_builder.dart';
 import 'package:real_state/widgets/questions/views/question_card_list_view.dart';
 
 class QuestionsDesktop extends StatelessWidget {
@@ -50,16 +51,21 @@ class QuestionsDesktop extends StatelessWidget {
                             fontWeight: FontWeight.w400),
                       )),
                   const Spacer(),
-                  CustomUi.defButton(
-                    title: 'View All FAQ’s',
-                    onPressed: () {},
-                    radius: 10.w,
-                    fontSize: 22.sp,
-                    borderColor: AppColor.g15,
-                    fontWeight: FontWeight.w500,
-                    backgroundColor: AppColor.g10,
-                    textColor: AppColor.white,
-                    edgeInsets: CustomUi.defPadding(vr: 18.w, hr: 24.w),
+                  Flexible(
+                    child: AspectRatio(
+                      aspectRatio: 3.5,
+                      child: CustomUi.defButton(
+                        title: 'View All FAQ’s',
+                        onPressed: () {},
+                        radius: 10.w,
+                        fontSize: 22.sp,
+                        borderColor: AppColor.g15,
+                        fontWeight: FontWeight.w500,
+                        backgroundColor: AppColor.g10,
+                        textColor: AppColor.white,
+                        edgeInsets: EdgeInsets.zero,
+                      ),
+                    ),
                   )
                 ],
               ),
@@ -67,7 +73,7 @@ class QuestionsDesktop extends StatelessWidget {
                 height: 80.h,
               ),
               // ========================= List View ======================
-              const QuestionCardListView(),
+              const QuestionCardListView(deviceScreenType: DeviceScreenType.desktop,),
               SizedBox(
                 height: 40.h,
               )

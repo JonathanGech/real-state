@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:real_state/utils/app_colors.dart';
 import 'package:real_state/widgets/feature/feature.dart';
 import 'package:real_state/widgets/links/links.dart';
+import 'package:real_state/widgets/questions/questions.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -22,13 +23,13 @@ class HomePage extends StatelessWidget {
               // ========================= Body section ======================
               // Body(),
               // ========================= Links section ======================
-              Links(),
+              // Links(),
               // ========================= Feature section ======================
               // Feature(),
               // ========================= Testimonials section ======================
               // Testimonials(),
               // ========================= Questions section ======================
-              // Questions(),
+              Questions(),
               // ========================= Start section ======================
               // Start(),
               // ========================= Footer section ======================

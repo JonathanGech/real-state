@@ -155,8 +155,8 @@ class _HomeCardListViewState extends State<HomeCardListView> {
                 Row(
                   children: [
                     Container(
-                      width: 48.w,
-                      height: 48.h,
+                      width: 48.sl,
+                      height: 48.sl,
                       decoration: BoxDecoration(
                           color: AppColor.g10,
                           border: Border.all(color: AppColor.g15, width: 1),
