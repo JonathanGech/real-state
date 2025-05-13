@@ -22,18 +22,26 @@ class LinksDesktop extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              LinksView.desktop(
-                  title: 'Find Your Dream Home',
-                  assetPath: 'assets/imgs/icons/icon-1.png'),
-              LinksView.desktop(
-                  title: 'Unlock Property Value',
-                  assetPath: 'assets/imgs/icons/icon-2.png'),
-              LinksView.desktop(
-                  title: 'Effertless Property Management',
-                  assetPath: 'assets/imgs/icons/icon-3.png'),
-              LinksView.desktop(
-                  title: 'Smart Investment Informed Decisions',
-                  assetPath: 'assets/imgs/icons/icon-1.png'),
+              Flexible(
+                child: LinksView.desktop(
+                    title: 'Find Your Dream Home',
+                    assetPath: 'assets/imgs/icons/icon-1.png'),
+              ),
+              Flexible(
+                child: LinksView.desktop(
+                    title: 'Unlock Property Value',
+                    assetPath: 'assets/imgs/icons/icon-2.png'),
+              ),
+              Flexible(
+                child: LinksView.desktop(
+                    title: 'Effertless Property Management',
+                    assetPath: 'assets/imgs/icons/icon-3.png'),
+              ),
+              Flexible(
+                child: LinksView.desktop(
+                    title: 'Smart Investment Informed Decisions',
+                    assetPath: 'assets/imgs/icons/icon-1.png'),
+              ),
             ],
           ),
         ),

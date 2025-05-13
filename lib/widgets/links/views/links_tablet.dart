@@ -22,18 +22,26 @@ class LinksTablet extends StatelessWidget {
           child:  Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              LinksView.tablet(
-                  title: 'Find Your Dream Home',
-                  assetPath: 'assets/imgs/icons/icon-1.png'),
-              LinksView.tablet(
-                  title: 'Unlock Property Value',
-                  assetPath: 'assets/imgs/icons/icon-2.png'),
-              LinksView.tablet(
-                  title: 'Effertless Property Management',
-                  assetPath: 'assets/imgs/icons/icon-3.png'),
-              LinksView.tablet(
-                  title: 'Smart Investment Informed Decisions',
-                  assetPath: 'assets/imgs/icons/icon-1.png'),
+              Flexible(
+                child: LinksView.tablet(
+                    title: 'Find Your Dream Home',
+                    assetPath: 'assets/imgs/icons/icon-1.png'),
+              ),
+              Flexible(
+                child: LinksView.tablet(
+                    title: 'Unlock Property Value',
+                    assetPath: 'assets/imgs/icons/icon-2.png'),
+              ),
+              Flexible(
+                child: LinksView.tablet(
+                    title: 'Effertless Property Management',
+                    assetPath: 'assets/imgs/icons/icon-3.png'),
+              ),
+              Flexible(
+                child: LinksView.tablet(
+                    title: 'Smart Investment Informed Decisions',
+                    assetPath: 'assets/imgs/icons/icon-1.png'),
+              ),
             ],
           ),
         ),
