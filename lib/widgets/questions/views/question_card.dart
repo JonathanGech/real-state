@@ -11,12 +11,11 @@ class QuestionCard extends StatelessWidget {
       {super.key,
       required this.questionCardModel,
       required this.flex,
-      required this.titleFs,
-      required this.descriptionFs, required this.aspectRatio});
+      this.padding,
+      required this.aspectRatio});
   final QuestionCardModel questionCardModel;
   final int flex;
-  final double titleFs;
-  final double descriptionFs;
+  final double? padding;
   final double aspectRatio;
 
   @override
@@ -26,7 +25,6 @@ class QuestionCard extends StatelessWidget {
       child: HoverOver(builder: (ishovered) {
         return AnimatedContainer(
           duration: const Duration(milliseconds: 300),
-          // padding: CustomUi.defPadding(vr: 20.h, hr: 10.w),
           decoration: BoxDecoration(
             color: AppColor.g8,
             border: Border.all(
@@ -51,14 +49,17 @@ class QuestionCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Spacer(),
-                Text(
-                  questionCardModel.title,
-                  textAlign: TextAlign.center,
-                  style: CustomUi.defTextStyle(
-                      height: 1.5,
-                      fontSize: titleFs,
-                      color: AppColor.white,
-                      fontWeight: FontWeight.w600),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: padding ?? 20.sl),
+                  child: Text(
+                    questionCardModel.title,
+                    textAlign: TextAlign.center,
+                    style: CustomUi.defTextStyle(
+                        height: 1.5,
+                        fontSize: 28.sp,
+                        color: AppColor.white,
+                        fontWeight: FontWeight.w600),
+                  ),
                 ),
                 SizedBox(
                   height: 30.sl,
@@ -68,7 +69,7 @@ class QuestionCard extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: CustomUi.defTextStyle(
                       height: 1.5,
-                      fontSize: descriptionFs,
+                      fontSize: 22.sp,
                       color: AppColor.g60,
                       fontWeight: FontWeight.w400),
                 ),
@@ -76,7 +77,8 @@ class QuestionCard extends StatelessWidget {
                 Row(
                   children: [
                     Spacer(), //12.5
-                    Flexible( //75
+                    Flexible(
+                      //75
                       flex: flex,
                       child: AspectRatio(
                         aspectRatio: aspectRatio,
@@ -91,10 +93,10 @@ class QuestionCard extends StatelessWidget {
                             backgroundColor: AppColor.g10),
                       ),
                     ),
-                    Spacer(flex: 1,)
+                    const Spacer()
                   ],
                 ),
-                 SizedBox(
+                SizedBox(
                   height: 10.sl,
                 ),
               ],
@@ -106,17 +108,18 @@ class QuestionCard extends StatelessWidget {
   }
 
   factory QuestionCard.desktop({required QuestionCardModel questionCardModel}) {
-    return QuestionCard(questionCardModel: questionCardModel, 
-        flex: 3,
-        titleFs: 28.sp,
-        descriptionFs: 22.sp,
-        aspectRatio: 3.5);
+    return QuestionCard(
+        questionCardModel: questionCardModel, flex: 3, aspectRatio: 4.5);
   }
   factory QuestionCard.tablet({required QuestionCardModel questionCardModel}) {
-    return QuestionCard(questionCardModel: questionCardModel, 
+    return QuestionCard(
+        questionCardModel: questionCardModel, flex: 3, aspectRatio: 3.5);
+  }
+  factory QuestionCard.mobile({required QuestionCardModel questionCardModel}) {
+    return QuestionCard(
+        questionCardModel: questionCardModel,
         flex: 3,
-        titleFs: 28.sp,
-        descriptionFs: 22.sp,
-        aspectRatio: 3.5);
+        padding: 5.sl,
+        aspectRatio: 4);
   }
 }

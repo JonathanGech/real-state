@@ -2,9 +2,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_state/components/custom_list_view_builder.dart';
+import 'package:real_state/components/index_controller_view.dart';
 import 'package:real_state/utils/app_colors.dart';
 import 'package:real_state/utils/custom_list_view_controller.dart';
-import 'package:real_state/utils/custom_ui.dart';
 import 'package:real_state/utils/responsive_builder.dart';
 import 'package:real_state/utils/size.dart';
 import 'package:real_state/widgets/questions/views/question_card.dart';
@@ -78,9 +78,47 @@ class _QuestionCardListViewState extends State<QuestionCardListView> {
   }
 
   Widget _mobile() {
-    return SizedBox();
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Flexible(
+          child: ScrollConfiguration(
+            behavior: ScrollConfiguration.of(context).copyWith(dragDevices: {
+              PointerDeviceKind.mouse,
+              PointerDeviceKind.touch
+            }),
+            child: AspectRatio(
+              aspectRatio: 1.3,
+              child: CustomListViewBuilder(
+                controller: _customListViewController,
+                itemCount: 5,
+                itemWidth: (w - 30.w * 2),
+                viewportExtent: (w - 30.w * 2),
+                itemBuilder: (context, index) {
+                  return QuestionCard.mobile(
+                      questionCardModel: _fewModels[index]);
+                },
+              ),
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 30.sl,
+        ),
+        const Divider(
+          color: AppColor.g15,
+          thickness: 1,
+        ),
+        IndexControllerView.mobile(
+            customListViewController: _customListViewController,
+            length: _fewModels.length,
+            ontap: (v) {},
+            buttonText: 'View All FAQ’s',
+            onPressed: () {},
+            move: (w - 30.w * 2))
+      ],
+    );
   }
-
   Widget _tablet() {
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -113,92 +151,11 @@ class _QuestionCardListViewState extends State<QuestionCardListView> {
           color: AppColor.g15,
           thickness: 1,
         ),
-        AnimatedBuilder(
-          animation: _customListViewController,
-          builder: (__, ___) => Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                RichText(
-                  text: TextSpan(children: [
-                    TextSpan(
-                      text:
-                          _customListViewController.visibleItemCount.toString(),
-                      style: CustomUi.defTextStyle(
-                          height: 1.5,
-                          fontSize: 16.sp,
-                          color: AppColor.white,
-                          fontWeight: FontWeight.w400),
-                    ),
-                    TextSpan(
-                      text: ' of ${_fewModels.length}',
-                      style: CustomUi.defTextStyle(
-                          height: 1.5,
-                          fontSize: 16.sp,
-                          color: AppColor.g60,
-                          fontWeight: FontWeight.w400),
-                    )
-                  ]),
-                ),
-                Row(
-                  children: [
-                    Container(
-                      width: 48.w,
-                      height: 48.h,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          color: AppColor.g10,
-                          border: Border.all(color: AppColor.g15, width: 1),
-                          shape: BoxShape.circle),
-                      child: IconButton(
-                        onPressed: () {
-                          if (_customListViewController.canGoPrevious) {
-                            _customListViewController
-                                .previous((w - 80.w * 2) / 3);
-                          }
-                        },
-                        icon: Icon(
-                          Icons.arrow_back,
-                          size: 24.w,
-                        ),
-                        color: _customListViewController.canGoPrevious
-                            ? AppColor.white
-                            : AppColor.g60,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20.w,
-                    ),
-                    Container(
-                      width: 48.w,
-                      height: 48.h,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          color: AppColor.g10,
-                          border: Border.all(color: AppColor.g15, width: 1),
-                          shape: BoxShape.circle),
-                      child: IconButton(
-                        padding: EdgeInsets.all(5.w),
-                        onPressed: () {
-                          if (_customListViewController.canGoNext) {
-                            _customListViewController.next((w - 80.w * 2) / 3);
-                          }
-                        },
-                        icon: Icon(
-                          Icons.arrow_forward,
-                          size: 24.w,
-                        ),
-                        color: _customListViewController.canGoNext
-                            ? AppColor.white
-                            : AppColor.g60,
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            ),
-          ),
+        IndexControllerView.tablet(
+          customListViewController: _customListViewController,
+          length: _fewModels.length,
+          move: (w - 80.w * 2) / 3,
+          ontap: (index) => print(index),
         )
       ],
     );
@@ -236,95 +193,12 @@ class _QuestionCardListViewState extends State<QuestionCardListView> {
           color: AppColor.g15,
           thickness: 1,
         ),
-        AnimatedBuilder(
-          animation: _customListViewController,
-          builder: (__, ___) => Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                RichText(
-                  text: TextSpan(children: [
-                    TextSpan(
-                      text:
-                          _customListViewController.visibleItemCount.toString(),
-                      style: CustomUi.defTextStyle(
-                          height: 1.5,
-                          fontSize: 22.sp,
-                          color: AppColor.white,
-                          fontWeight: FontWeight.w400),
-                    ),
-                    TextSpan(
-                      text: ' of ${_fewModels.length}',
-                      style: CustomUi.defTextStyle(
-                          height: 1.5,
-                          fontSize: 22.sp,
-                          color: AppColor.g60,
-                          fontWeight: FontWeight.w400),
-                    )
-                  ]),
-                ),
-                Row(
-                  children: [
-                    Container(
-                      width: 48.w,
-                      height: 48.h,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          color: AppColor.g10,
-                          border: Border.all(color: AppColor.g15, width: 1),
-                          shape: BoxShape.circle),
-                      child: IconButton(
-                        padding: EdgeInsets.all(5.w),
-                        onPressed: () {
-                          
-                          if (_customListViewController.canGoPrevious) {
-                            _customListViewController
-                                .previous((w - 162.w * 2) / 3);
-                          }
-                        },
-                        icon: Icon(
-                          Icons.arrow_back,
-                          size: 24.w,
-                        ),
-                        color: _customListViewController.canGoPrevious
-                            ? AppColor.white
-                            : AppColor.g60,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20.w,
-                    ),
-                    Container(
-                      width: 48.w,
-                      height: 48.h,
-                       alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          color: AppColor.g10,
-                          border: Border.all(color: AppColor.g15, width: 1),
-                          shape: BoxShape.circle),
-                      child: IconButton(
-                        padding: EdgeInsets.all(5.w),
-                        onPressed: () {
-                          if (_customListViewController.canGoNext) {
-                            _customListViewController.next((w - 162.w * 2) / 3);
-                          }
-                        },
-                        icon: Icon(
-                          Icons.arrow_forward,
-                          size: 24.w,
-                        ),
-                        color: _customListViewController.canGoNext
-                            ? AppColor.white
-                            : AppColor.g60,
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            ),
-          ),
-        )
+        IndexControllerView.desktop(
+          customListViewController: _customListViewController,
+          length: _fewModels.length,
+          move: (w - 162.w * 2) / 3,
+          ontap: (index) => print(index),
+        ),
       ],
     );
   }

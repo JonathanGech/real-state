@@ -267,7 +267,7 @@ class HomeCard extends StatelessWidget {
         height: 50.sl,
         width: 25.sl,
         fontsize: 16.sp,
-        titleFs: 20.sp);
+        titleFs: 24.sp);
   }
   factory HomeCard.mobile({required HomeCardModel homeCardModel}) {
     return HomeCard(

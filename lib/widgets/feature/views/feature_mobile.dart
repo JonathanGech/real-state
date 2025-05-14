@@ -11,7 +11,7 @@ class FeatureMobile extends StatelessWidget {
 @override
  Widget build(BuildContext context) {
     return Padding(
-      padding: CustomUi.defPadding(vr: 0, hr: 16.w),
+      padding: CustomUi.defPadding(vr: 0, hr: 30.w),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,7 +47,7 @@ class FeatureMobile extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 60.h,
+            height: 40.h,
           ),
           // ========================= List View ======================
           const HomeCardListView(deviceType: DeviceScreenType.mobile,),
