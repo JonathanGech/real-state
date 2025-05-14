@@ -103,7 +103,7 @@ class _QuestionCardListViewState extends State<QuestionCardListView> {
           ),
         ),
         SizedBox(
-          height: 30.sl,
+          height: 10.sl,
         ),
         const Divider(
           color: AppColor.g15,

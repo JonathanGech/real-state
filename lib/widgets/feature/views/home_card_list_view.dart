@@ -5,7 +5,6 @@ import 'package:real_state/components/custom_list_view_builder.dart';
 import 'package:real_state/components/index_controller_view.dart';
 import 'package:real_state/utils/app_colors.dart';
 import 'package:real_state/utils/custom_list_view_controller.dart';
-import 'package:real_state/utils/custom_ui.dart';
 import 'package:real_state/utils/responsive_builder.dart';
 import 'package:real_state/utils/size.dart';
 import 'package:real_state/widgets/feature/views/home_card.dart';

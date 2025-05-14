@@ -36,23 +36,16 @@ class QuestionsMobile extends StatelessWidget {
 		              color: AppColor.white,
 		              fontWeight: FontWeight.w600)),
 		      // ========================= Description and button ======================
-		      Row(
-		        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-		        children: [
-		          SizedBox(
-		              width:  w * .8,
-		              child: Text(
-		                "Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way.",
-		                style: CustomUi.defTextStyle(
-		                    height: 1.5,
-		                    fontSize: 16.sp,
-		                    color: AppColor.g60,
-		                    fontWeight: FontWeight.w400),
-		              )),
-		    
-		          
-		        ],
-		      ),
+		      SizedBox(
+		          width:  w * .8,
+		          child: Text(
+		            "Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way.",
+		            style: CustomUi.defTextStyle(
+		                height: 1.5,
+		                fontSize: 16.sp,
+		                color: AppColor.g60,
+		                fontWeight: FontWeight.w400),
+		          )),
 		      // ========================= List View ======================
 		         SizedBox(
             height: 40.h,

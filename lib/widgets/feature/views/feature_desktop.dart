@@ -77,7 +77,7 @@ class _FeatureDesktopState extends State<FeatureDesktop> {
                 ],
               ),
               SizedBox(
-                height: 50.h,
+                height: 60.sl,
               ),
               // ========================= List View ======================
               const HomeCardListView(deviceType: DeviceScreenType.desktop,),

@@ -41,7 +41,7 @@ class FeatureMobile extends StatelessWidget {
               'Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein. Click "View Details" for more information.',
               style: CustomUi.defTextStyle(
                   height: 1.5,
-                  fontSize: 14.sp,
+                  fontSize: 16.sp,
                   color: AppColor.g60,
                   fontWeight: FontWeight.w400),
             ),

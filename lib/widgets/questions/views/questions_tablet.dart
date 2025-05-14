@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_state/utils/app_colors.dart';
 import 'package:real_state/utils/custom_ui.dart';
 import 'package:real_state/utils/responsive_builder.dart';
+import 'package:real_state/utils/size.dart';
 import 'package:real_state/widgets/questions/views/question_card_list_view.dart';
 	  
 class QuestionsTablet extends StatelessWidget {
@@ -69,9 +70,9 @@ class QuestionsTablet extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 40.h,
+            height: 40.sl,
           ),
-          // ========================= List View ======================
+          // // ========================= List View ======================
           const QuestionCardListView(deviceScreenType: DeviceScreenType.tablet,),
           SizedBox(
             height: 40.h,
