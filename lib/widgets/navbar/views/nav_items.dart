@@ -10,43 +10,51 @@ class NavItems extends StatelessWidget {
       required this.text,
       required this.selected,
       required this.ontap,
-      this.edgeInsets,
-      this.radius, this.fontSize});
+      required this.fontSize});
   final String text;
   final bool selected;
-  final EdgeInsets? edgeInsets;
-  final BorderRadius? radius;
-  final double? fontSize;
+  final double fontSize;
   final VoidCallback ontap;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: ontap,
-      child: HoverOver(builder: (ishover) {
-        return Padding(
-          padding: const EdgeInsets.only(right: 10.0),
-          child: AnimatedContainer(
-            duration: const Duration(seconds: 1),
-            padding: edgeInsets,
-            decoration: BoxDecoration(
-              color: selected ? AppColor.g8 : AppColor.g10,
-              borderRadius:radius,
-              border: selected
-                  ? Border.all(
-                      color: AppColor.g15,
-                      width: 1,
-                    )
-                  : null,
-            ),
-            child: Text(
-              text,
-              style: CustomUi.defTextStyle(
-                  fontSize: ishover ? (fontSize ?? 0).sp : ((8 / 9) * (fontSize ?? 0)).sp, color: AppColor.white),
+    return Flexible(
+      child: AspectRatio(
+        aspectRatio: 3,
+        child: Padding(
+          padding: const EdgeInsets.only(right: 8.0),
+          child: MouseRegion(
+            cursor:SystemMouseCursors.click,
+            child: GestureDetector(
+              onTap: ontap,
+              child: HoverOver(builder: (ishover) {
+                return AnimatedContainer(
+                  duration: const Duration(milliseconds: 300),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: selected ? AppColor.g15 : AppColor.g10,
+                    borderRadius: BorderRadius.circular(12.r),
+                    border: selected
+                        ? Border.all(
+                            color: AppColor.p60,
+                            width: 1,
+                          )
+                        : null,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal:  10.0),
+                    child: Text(
+                      text,
+                      style: CustomUi.defTextStyle(
+                          fontSize:  ishover? (8/9)* fontSize: fontSize , color: selected? AppColor.white: AppColor.w90, fontWeight: ishover? (selected? FontWeight.w500: FontWeight.w400 ): FontWeight.w400 ),
+                    ),
+                  ),
+                );
+              }),
             ),
           ),
-        );
-      }),
+        ),
+      ),
     );
   }
 
@@ -58,11 +66,10 @@ class NavItems extends StatelessWidget {
       text: text,
       selected: selected,
       ontap: ontap,
-      edgeInsets: CustomUi.defPadding(vr: 14.h, hr: 24.w),
-      radius:  CustomUi.radiusCircular(radius: 10.w),
-      fontSize: 18,
+      fontSize: 24.sp,
     );
   }
+
   factory NavItems.tablet(
       {required String text,
       required bool selected,
@@ -71,9 +78,19 @@ class NavItems extends StatelessWidget {
       text: text,
       selected: selected,
       ontap: ontap,
-      edgeInsets: CustomUi.defPadding(vr: 12.h, hr: 20.w),
-      radius:  CustomUi.radiusCircular(radius: 8.w),
-      fontSize: 14,
+      fontSize: 16.sp,
+    );
+  }
+  
+  factory NavItems.mobile(
+      {required String text,
+      required bool selected,
+      required VoidCallback ontap}) {
+    return NavItems(
+      text: text,
+      selected: selected,
+      ontap: ontap,
+      fontSize: 16.sp,
     );
   }
 }

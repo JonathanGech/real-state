@@ -62,8 +62,8 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "7599c3fb7c7ce415d26b7b9a9fbad9a121cd8c04"
-      url: "git@github.com:JonathanGech/flutter_dev_utils.git"
+      resolved-ref: "6253401805dc260550a3cbf70bc950bdef4e670f"
+      url: "https://github.com/JonathanGech/flutter_dev_utils.git"
     source: git
     version: "0.0.1"
   fake_async:
@@ -132,6 +132,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.1.2"
+  hugeicons:
+    dependency: transitive
+    description:
+      name: hugeicons
+      sha256: cf172bae0c3ff2e2114324d05e79872081f4cd3c009f5979285fec73a693096a
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.11"
   leak_tracker:
     dependency: transitive
     description:

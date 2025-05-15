@@ -21,7 +21,7 @@ class QuestionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(right: 10.w),
+      padding: const EdgeInsets.only(right: 10),
       child: HoverOver(builder: (ishovered) {
         return AnimatedContainer(
           duration: const Duration(milliseconds: 300),
@@ -30,7 +30,7 @@ class QuestionCard extends StatelessWidget {
             border: Border.all(
                 color: ishovered ? AppColor.p60 : AppColor.g15,
                 width: ishovered ? 3 : 1),
-            borderRadius: CustomUi.radiusCircular(radius: 12.w),
+            borderRadius:CustomUi.radiusCircular(radius: 20),
             boxShadow: ishovered
                 ? [
                     BoxShadow(
@@ -43,40 +43,39 @@ class QuestionCard extends StatelessWidget {
                 : null,
           ),
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:  EdgeInsets.symmetric(vertical: 10.sl, horizontal: 20.sl),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Spacer(),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: padding ?? 20.sl),
-                  child: Text(
-                    questionCardModel.title,
-                    textAlign: TextAlign.center,
-                    style: CustomUi.defTextStyle(
-                        height: 1.5,
-                        fontSize: 28.sp,
-                        color: AppColor.white,
-                        fontWeight: FontWeight.w600),
-                  ),
+                const Spacer(),
+                Text(
+                  questionCardModel.title,
+                  textAlign: TextAlign.center,
+                  style: CustomUi.defTextStyle(
+                      height: 1.5,
+                      fontSize: 28.sp,
+                      color: AppColor.white,
+                      fontWeight: FontWeight.w600),
                 ),
                 SizedBox(
                   height: 30.sl,
                 ),
                 Text(
                   questionCardModel.description,
-                  textAlign: TextAlign.center,
+
                   style: CustomUi.defTextStyle(
                       height: 1.5,
                       fontSize: 22.sp,
                       color: AppColor.g60,
                       fontWeight: FontWeight.w400),
                 ),
-                const Spacer(),
+                const Spacer(
+                  flex: 2,
+                ),
                 Row(
                   children: [
-                    Spacer(), //12.5
+                    const Spacer(), //12.5
                     Flexible(
                       //75
                       flex: flex,

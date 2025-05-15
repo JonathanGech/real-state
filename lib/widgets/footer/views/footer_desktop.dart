@@ -93,7 +93,7 @@ class FooterDesktop extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 25.sl,
+                spacing: 30.sl,
                 children: [
                   // Home
                   Text('Home',
@@ -118,7 +118,7 @@ class FooterDesktop extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 25.sl,
+                spacing: 30.sl,
                 children: [
                   // Home
                   Text('About Us',
@@ -144,7 +144,7 @@ class FooterDesktop extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 25.sl,
+                spacing: 30.sl,
                 children: [
                   Text('Properties',
                       style: CustomUi.defTextStyle(
@@ -163,7 +163,7 @@ class FooterDesktop extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 25.sl,
+                spacing: 30.sl,
                 children: [
                   // Home
                   Text('Services',
@@ -188,7 +188,7 @@ class FooterDesktop extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 25.sl,
+                spacing: 30.sl,
                 children: [
                   // Home
                   Text('Contact Us',

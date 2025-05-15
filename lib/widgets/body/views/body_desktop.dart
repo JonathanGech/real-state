@@ -55,9 +55,9 @@ class BodyDesktop extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Flexible(
-                              flex: 3,
+                              flex: 1,
                               child: AspectRatio(
-                                aspectRatio: 3.5,
+                                aspectRatio: 4,
                                 child: CustomUi.defButton(
                                   title: 'Learn More',
                                   radius: 10.w,
@@ -77,9 +77,9 @@ class BodyDesktop extends StatelessWidget {
                               width: 20.sl,
                             ),
                             Flexible(
-                              flex: 3,
+                            
                               child: AspectRatio(
-                                aspectRatio: 3.5,
+                                aspectRatio: 4,
                                 child: CustomUi.defButton(
                                   title: 'Browse Properties',
                                   radius: 10.w,
@@ -132,7 +132,7 @@ class BodyDesktop extends StatelessWidget {
             )
           ],
         ),
-
+         SizedBox(height: 40.sl,)
       ],
     );
   }

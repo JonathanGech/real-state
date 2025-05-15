@@ -22,7 +22,6 @@ class Info extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Flexible(
-      flex: 3,
       child: Padding(
         padding: EdgeInsets.only(right: 10.w),
         child: AspectRatio(

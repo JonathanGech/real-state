@@ -18,14 +18,7 @@ class LinksMobile extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppColor.g8,
             border: Border.all(color: AppColor.g15, width: 4),
-            boxShadow: const [
-              BoxShadow(
-                color: AppColor.w90,
-                offset:  Offset(0, 2),
-                blurRadius: 50,
-                spreadRadius: -30,
-              )
-            ]
+           
           ),
           child:  Column(
             children: [

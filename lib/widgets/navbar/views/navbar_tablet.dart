@@ -9,7 +9,6 @@ import 'package:real_state/widgets/navbar/bloc/navbar_event.dart';
 import 'package:real_state/widgets/navbar/bloc/navbar_items.dart';
 import 'package:real_state/widgets/navbar/bloc/navbar_state.dart';
 import 'package:real_state/widgets/navbar/views/nav_items.dart';
-import 'package:real_state/widgets/navbar/views/navbar_view.dart';
 	  
 class NavbarTablet extends StatelessWidget {
 	const NavbarTablet({super.key});
@@ -38,67 +37,76 @@ final List<NavbarItems> navItems = const [
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const NavbarView(),
-
-        // ========================= Nav section ======================
-        Container(
-          height: 77.h,
-          width: w,
-          padding: CustomUi.defPadding(vr: 14.h, hr: 80.w),
-          decoration: const BoxDecoration(
-            color: AppColor.g10,
+    return Container(
+      padding: CustomUi.defPadding(vr: 15.sl, hr: 80.w),
+      decoration: BoxDecoration(
+        color: AppColor.g10,
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        // crossAxisAlignment: CrossAxisAlignment.,
+        children: [
+          // NavbarView(),
+          // ========================= Nav section ======================
+          Flexible(
+            child: SizedBox(
+              width: 120.w.clamp(110, 200),
+              child: Image.asset(
+                'assets/imgs/logo.png',
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SizedBox(
-                width: 113.w,
-                child: Image.asset(
-                  'assets/imgs/logo.png',
-                  fit: BoxFit.cover,
-                ),
-              ),
-              BlocBuilder<NavbarBloc, NavbarState>(
-                builder: (context, state) {
-                  state as NavbarInitial;
-                  return Row(
-                    children: [
-                      ...navItems.map((e) {
-                        return NavItems.tablet(
-                          text: matchNavbarItem(e),
-                          selected: state.selectedItem == e,
-                          ontap: () {
-                            context
-                                .read<NavbarBloc>()
-                                .add(NavbarInitialEvent(selectedItem: e));
-                          },
-                        );
-                      }),
-                    ],
-                  );
-                },
-              ),
-              CustomUi.defButton(
+          Spacer(),
+          Flexible(
+            flex: 3,
+            child: BlocBuilder<NavbarBloc, NavbarState>(
+              builder: (context, state) {
+                state as NavbarInitial;
+                return Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    ...navItems.map((e) {
+                      return NavItems.tablet(
+                        text: matchNavbarItem(e),
+                        selected: state.selectedItem == e,
+                        ontap: () {
+                          context
+                              .read<NavbarBloc>()
+                              .add(NavbarInitialEvent(selectedItem: e));
+                        },
+                      );
+                    }),
+                  ],
+                );
+              },
+            ),
+          ),
+          Spacer(),
+          Flexible(
+            // flex: 2,
+            child: AspectRatio(
+              aspectRatio: 3.5,
+              child: CustomUi.defButton(
                 title: matchNavbarItem(NavbarItems.contact),
-                radius: 8.w,
-                fontSize: 14.sp,
+                radius: 10.w,
+                fontSize: 22.sp,
                 borderColor: AppColor.g15,
                 fontWeight: FontWeight.w500,
                 fontFamily: 'Urbanist',
                 backgroundColor: AppColor.g8,
                 textColor: AppColor.white,
-                edgeInsets: CustomUi.defPadding(vr: 14.h, hr: 20.w),
+                edgeInsets: EdgeInsets.zero,
                 onPressed: () {
-                  context.read<NavbarBloc>().add(
-                      const NavbarInitialEvent(selectedItem: NavbarItems.contact));
+                  context.read<NavbarBloc>().add(NavbarInitialEvent(
+                      selectedItem: NavbarItems.contact));
                 },
               ),
-            ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
