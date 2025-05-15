@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real_state/utils/app_colors.dart';
 import 'package:real_state/utils/custom_ui.dart';
 import 'package:real_state/utils/responsive_builder.dart';
+import 'package:real_state/utils/size.dart';
 import 'package:real_state/widgets/testimonials/views/testimonials_card_list_view.dart';
 	  
 class TestimonialsTablet extends StatelessWidget {
@@ -66,7 +67,7 @@ class TestimonialsTablet extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 60.h,
+                height: 40.sl,
               ),
               // ========================= List View ======================
               const TestimonialsCardListView(deviceType: DeviceScreenType.tablet),

@@ -7,10 +7,16 @@ import 'package:real_state/utils/custom_ui.dart';
 import 'package:real_state/widgets/testimonials/views/testimonial_card_model.dart';
 
 class TestimonialCard extends StatelessWidget {
-  const TestimonialCard({super.key, required this.testimonialCardModel, this.width, this.padding, this.assetSize, this.locationFs, this.titleFs, this.fullNameFs});
+  const TestimonialCard(
+      {super.key,
+      required this.testimonialCardModel,
+   
+      this.assetSize,
+      this.locationFs,
+      this.titleFs,
+      this.fullNameFs});
   final TestimonialCardModel testimonialCardModel;
-  final double? width;
-  final double? padding;
+
   final double? assetSize;
   final double? locationFs;
   final double? titleFs;
@@ -19,12 +25,11 @@ class TestimonialCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(right: padding!.w),
+      padding: const EdgeInsets.only(right: 10),
       child: HoverOver(builder: (ishovered) {
         return AnimatedContainer(
+          padding: const EdgeInsets.only(left: 20),
           duration: const Duration(milliseconds: 300),
-          width: width,
-          padding: CustomUi.defPadding(vr: padding?.h, hr: padding?.w),
           decoration: BoxDecoration(
             gradient: ishovered
                 ? LinearGradient(
@@ -41,7 +46,7 @@ class TestimonialCard extends StatelessWidget {
             border: Border.all(
                 color: ishovered ? AppColor.p60 : AppColor.g15,
                 width: ishovered ? 3 : 1),
-            borderRadius: CustomUi.radiusCircular(radius: (padding??0) * 0.6 .w),
+            borderRadius: CustomUi.radiusCircular(radius: 20),
             boxShadow: ishovered
                 ? [
                     BoxShadow(
@@ -57,6 +62,7 @@ class TestimonialCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const Spacer(),
               Row(
                 children: [
                   for (int i = 0; i < testimonialCardModel.ratingCount; i++)
@@ -66,7 +72,7 @@ class TestimonialCard extends StatelessWidget {
                     )
                 ],
               ),
-              SizedBox(height: 20.h),
+              const Spacer(flex: 2),
               Text(
                 testimonialCardModel.title,
                 style: CustomUi.defTextStyle(
@@ -75,7 +81,7 @@ class TestimonialCard extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     height: 1.5),
               ),
-              SizedBox(height: 20.h),
+              const Spacer(),
               Text(
                 testimonialCardModel.description,
                 style: CustomUi.defTextStyle(
@@ -84,7 +90,9 @@ class TestimonialCard extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     height: 1.5),
               ),
-              const Spacer(),
+              const Spacer(
+                flex: 2,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -124,7 +132,8 @@ class TestimonialCard extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(height: 5.h),
+           Spacer(flex: 2),
+           
             ],
           ),
         );
@@ -132,10 +141,34 @@ class TestimonialCard extends StatelessWidget {
     );
   }
 
-  factory TestimonialCard.desktop({required TestimonialCardModel testimonialCardModel}){
-    return TestimonialCard(testimonialCardModel: testimonialCardModel, fullNameFs:  22.sp, assetSize: 30, padding: 20,width: 380.w, locationFs: 18.sp, titleFs: 28.sp,);
+  factory TestimonialCard.desktop(
+      {required TestimonialCardModel testimonialCardModel}) {
+    return TestimonialCard(
+      testimonialCardModel: testimonialCardModel,
+      fullNameFs: 22.sp,
+      assetSize: 30,
+      locationFs: 18.sp,
+      titleFs: 28.sp,
+    );
   }
-  factory TestimonialCard.tablet({required TestimonialCardModel testimonialCardModel}){
-    return TestimonialCard(testimonialCardModel: testimonialCardModel, fullNameFs:  18.sp, assetSize: 20, padding: 10,width: 380.w + 380.w * 0.13, locationFs: 16.w, titleFs: 20.sp,);
+  factory TestimonialCard.tablet(
+      {required TestimonialCardModel testimonialCardModel}) {
+    return TestimonialCard(
+      testimonialCardModel: testimonialCardModel,
+      fullNameFs: 18.sp,
+      assetSize: 20,
+      locationFs: 16.w,
+      titleFs: 20.sp,
+    );
+  }
+  factory TestimonialCard.mobile(
+      {required TestimonialCardModel testimonialCardModel}) {
+    return TestimonialCard(
+      testimonialCardModel: testimonialCardModel,
+      fullNameFs: 18.sp,
+      assetSize: 20,
+      locationFs: 16.w,
+      titleFs: 20.sp,
+    );
   }
 }
