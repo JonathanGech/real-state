@@ -90,7 +90,7 @@ This structure helps maintain clear separation between responsive layouts, makin
 > ✅ Designed for easy navigation, maintenance, and quick adaptation to new sections or styles.
 
 ## ✨ Credits
- - Special thanks to `Praha | Produce UI` : https://www.figma.com/files/team/1363971031795679103/resources/community/search?fuid=1363971029819437421&query=real%20state&resource_type=files&editor_type=all&price=all
+ - Special thanks to `Praha | Produce UI` : https://www.figma.com/design/Tr9wzFtZRz8AZ322xeDX4P/Real-Estate-Business-Website-UI-Template---Dark-Theme-%7C-Produce-UI--Community-?t=RdewZe8rCpPtZqbE-0
  
 
  - 
