@@ -1,10 +1,315 @@
+import 'package:dev_utils/widgets/hover_over.dart';
 import 'package:flutter/material.dart';
-	  
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:real_state/utils/app_colors.dart';
+import 'package:real_state/utils/custom_ui.dart';
+import 'package:real_state/utils/size.dart';
+import 'package:real_state/widgets/footer/views/links_botton.dart';
+import 'package:real_state/widgets/footer/views/svg_buttons.dart';
+
 class FooterMobile extends StatelessWidget {
-	const FooterMobile({super.key});
-	  
-	@override
-	Widget build(BuildContext context) {
-		return Container();
-	}
+  const FooterMobile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Padding(
+          padding: CustomUi.defPadding(hr: 50.w, vr: 0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Email section
+              Column(
+                // mainAxisAlignment: MainAxisAlignment.,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // logo
+                  SizedBox(
+                    width: 200.w,
+                    child: Image.asset('assets/imgs/logo.png'),
+                  ),
+                  SizedBox(
+                    height: 25.sl,
+                  ),
+                  // email text
+                  Container(
+                    padding: CustomUi.defPadding(vr: 0, hr: 20.w),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: AppColor.g15, width: 1),
+                      borderRadius: CustomUi.radiusCircular(radius: 12.w),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // textfiled
+                        Row(
+                          children: [
+                            SizedBox(
+                                width: 30.w,
+                                child:
+                                    SvgPicture.asset('assets/icons/email.svg')),
+                            SizedBox(
+                              width: 15.w,
+                            ),
+                            SizedBox(
+                              width: w * 0.2,
+                              child: TextField(
+                                style: TextStyle(
+                                  color: AppColor.white,
+                                  fontSize: 20.sp,
+                                ),
+                                decoration: InputDecoration(
+                                  hintText: 'Enter your email',
+                                  hintStyle: TextStyle(
+                                    color: AppColor.g60,
+                                    fontSize: 20.sp,
+                                  ),
+                                  border: InputBorder.none,
+                                  contentPadding: EdgeInsets.symmetric(
+                                      vertical: 10.h, horizontal: 20.w),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        // emailSend logo with gesuture detector
+                        GestureDetector(
+                            onTap: () {},
+                            child: SizedBox(
+                              child: SvgPicture.asset('assets/icons/send.svg',
+                                  width: 30.w, fit: BoxFit.fill),
+                            )),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 25.sl,
+              ),
+              const Divider(
+                color: AppColor.g10,
+                thickness: 2,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    spacing: 25.sl,
+                    children: [
+                      // Home
+                      Text('Home',
+                          style: CustomUi.defTextStyle(
+                              height: 1.2,
+                              fontSize: 20.sp,
+                              color: AppColor.g60,
+                              fontWeight: FontWeight.w600)),
+                      //Links
+                      LinksButton(text: 'Hero Section', onTap: () {}),
+                      LinksButton(text: 'Features', onTap: () {}),
+                      LinksButton(text: 'Properties', onTap: () {}),
+                      LinksButton(text: 'Testimonials', onTap: () {}),
+                      LinksButton(text: "FAQ's", onTap: () {}),
+                    ],
+                  ),
+                  const VerticalDivider(
+                    color: AppColor.g10,
+                    thickness: 2,
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    spacing: 25.sl,
+                    children: [
+                      // Home
+                      Text('About Us',
+                          style: CustomUi.defTextStyle(
+                              height: 1.2,
+                              fontSize: 20.sp,
+                              color: AppColor.g60,
+                              fontWeight: FontWeight.w600)),
+                      //Links
+
+                      LinksButton(text: 'Our Story', onTap: () {}),
+
+                      LinksButton(text: 'Our Works', onTap: () {}),
+
+                      LinksButton(text: 'How It Works', onTap: () {}),
+
+                      LinksButton(text: 'Our Team', onTap: () {}),
+
+                      LinksButton(text: "Our Clients", onTap: () {}),
+                    ],
+                  ),
+                ],
+              ),
+              // About us
+              SizedBox(
+                height: 25.sl,
+              ),
+              const Divider(
+                color: AppColor.g10,
+                thickness: 2,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                 
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    spacing: 25.sl,
+                    children: [
+                      // Home
+                      Text('Services',
+                          style: CustomUi.defTextStyle(
+                              height: 1.2,
+                              fontSize: 20.sp,
+                              color: AppColor.g60,
+                              fontWeight: FontWeight.w600)),
+                      //Links
+                      LinksButton(text: 'Valuation Mastery', onTap: () {}),
+
+                      LinksButton(text: 'Strategic Marketing', onTap: () {}),
+
+                      LinksButton(text: 'Negotiation Wizardry', onTap: () {}),
+
+                      LinksButton(text: 'Closing Success', onTap: () {}),
+
+                      LinksButton(text: "Property Management", onTap: () {}),
+                    ],
+                  ),
+                   const VerticalDivider(
+                    color: AppColor.g10,
+                    thickness: 2,
+                  ),
+                   //Properties
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    spacing: 25.sl,
+                    children: [
+                      Text('Properties',
+                          style: CustomUi.defTextStyle(
+                              height: 1.2,
+                              fontSize: 20.sp,
+                              color: AppColor.g60,
+                              fontWeight: FontWeight.w600)),
+                      //Links
+
+                      LinksButton(text: 'Portfolio', onTap: () {}),
+                      LinksButton(text: 'Categories', onTap: () {}),
+                    ],
+                  ),
+                 
+                ],
+              ),
+              // Services
+              SizedBox(
+                height: 25.sl,
+              ),
+              const Divider(
+                color: AppColor.g10,
+                thickness: 2,
+              ),
+              
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Contact
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    spacing: 25.sl,
+                    children: [
+                      // Home
+                      Text('Contact Us',
+                          style: CustomUi.defTextStyle(
+                              height: 1.2,
+                              fontSize: 20.sp,
+                              color: AppColor.g60,
+                              fontWeight: FontWeight.w600)),
+                      //Links
+                      LinksButton(text: 'Contact Form', onTap: () {}),
+                      LinksButton(text: 'Our Offices', onTap: () {}),
+                    ],
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 25.sl,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SvgButtons.mobile(assetPath: 'assets/icons/facebook.svg'),
+            SvgButtons.mobile(assetPath: 'assets/icons/youtube.svg'),
+            SvgButtons.mobile(assetPath: 'assets/icons/linkedin.svg'),
+            SvgButtons.mobile(assetPath: 'assets/icons/tiwtter.svg'),
+          ],
+        ),
+        const Divider(
+          color: AppColor.g10,
+          thickness: 2,
+        ),
+        //Privacy section
+         SizedBox(
+                height: 25.sl,
+              ),
+        Container(
+          color: AppColor.g10,
+          alignment: Alignment.center,
+          width: w,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              HoverOver(builder: (isHovered) {
+                return Text(
+                  '@2023 Estatein. All Rights Reserved.',
+                  style: TextStyle(
+                      decoration: isHovered
+                          ? TextDecoration.underline
+                          : TextDecoration.none,
+                      decorationColor: AppColor.white,
+                      color: AppColor.w90,
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w400),
+                );
+              }),
+              SizedBox(
+                width: 10.w,
+              ),
+              HoverOver(builder: (isHovered) {
+                return Text(
+                  'Terms & Conditions',
+                  style: TextStyle(
+                      decoration: isHovered
+                          ? TextDecoration.underline
+                          : TextDecoration.none,
+                      decorationColor: AppColor.white,
+                      color: AppColor.w90,
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w400),
+                );
+              }),
+            ],
+          ),
+        )
+      ],
+    );
+  }
 }

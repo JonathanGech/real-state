@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:real_state/utils/app_colors.dart';
+import 'package:real_state/widgets/footer/footer.dart';
 import 'package:real_state/widgets/start/start.dart';
 // import 'package:real_state/widgets/feature/feature.dart';
 // import 'package:real_state/widgets/links/links.dart';
@@ -33,9 +34,9 @@ class HomePage extends StatelessWidget {
               // ========================= Questions section ======================
               // Questions(),
               // ========================= Start section ======================
-              Start(),
+              // Start(),
               // ========================= Footer section ======================
-              // Footer(),
+              Footer(),
             ],
           )))
         ],
