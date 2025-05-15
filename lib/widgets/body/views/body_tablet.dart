@@ -12,125 +12,128 @@ class BodyTablet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         // ========================= Discover section ======================
-        SizedBox(
-          width: w,
-          height: 622.h,
-          child: Stack(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    width: w * 0.42,
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                          top: 98.h, bottom: 98.h, left: 80.w),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            width: 610.w,
-                            child: Text(
-                                'Discover Your Dream Property with Estateing',
-                                style: CustomUi.defTextStyle(
-                                    height: 1.2,
-                                    fontSize: 46.sp,
-                                    fontWeight: FontWeight.w600,
-                                    color: AppColor.white)),
-                          ),
-                          SizedBox(
-                            height: 20.h,
-                          ),
-                          SizedBox(
-                            width: 610.w,
-                            child: Text(
-                              'Your journey to finding the perfect property begins here. Explore our listings to find the home that matches your dreams.',
-                              style: CustomUi.defTextStyle(
-                                  height: 1.5,
-                                  fontSize: 16.sp,
+        Stack(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: w * 0.5,
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                        top: 70.sl, bottom: 70.sl, left: 100.sl, right: 20.sl),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                            'Discover Your Dream Property with Estateing',
+                            style: CustomUi.defTextStyle(
+                                height: 1.2,
+                                fontSize: 60.sp,
+                                fontWeight: FontWeight.w600,
+                                color: AppColor.white)),
+                        SizedBox(
+                          height: 24.sl,
+                        ),
+                        Text(
+                          'Your journey to finding the perfect property begins here. Explore our listings to find the home that matches your dreams.',
+                          style: CustomUi.defTextStyle(
+                              height: 1.5,
+                              fontSize: 22.sp,
+                              fontWeight: FontWeight.w400,
+                              color: AppColor.g60),
+                        ),
+                        SizedBox(
+                          height: 50.sl,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Flexible(
+                              flex: 3,
+                              child: AspectRatio(
+                                aspectRatio: 3.5,
+                                child: CustomUi.defButton(
+                                  title: 'Learn More',
+                                  radius: 10.w,
+                                  fontSize: 22.sp,
+                                  borderColor: AppColor.g15,
                                   fontWeight: FontWeight.w400,
-                                  color: AppColor.g60),
+                                  fontFamily: 'Urbanist',
+                                  backgroundColor: AppColor.g10,
+                                  textColor: AppColor.white,
+                                  edgeInsets:
+                                     EdgeInsets.zero,
+                                  onPressed: () {},
+                                ),
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            height: 50.h,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              CustomUi.defButton(
-                                title: 'Learn More',
-                                radius: 8.w,
-                                fontSize: 14.sp,
-                                borderColor: AppColor.g15,
-                                fontWeight: FontWeight.w400,
-                                fontFamily: 'Urbanist',
-                                backgroundColor: AppColor.g10,
-                                textColor: AppColor.white,
-                                edgeInsets:
-                                    CustomUi.defPadding(vr: 14.h, hr: 20.w),
-                                onPressed: () {},
+                            SizedBox(
+                              width: 20.sl,
+                            ),
+                            Flexible(
+                              flex: 3,
+                              child: AspectRatio(
+                                aspectRatio: 3.5,
+                                child: CustomUi.defButton(
+                                  title: 'Browse Properties',
+                                  radius: 10.w,
+                                  fontSize: 22.sp,
+                                  fontWeight: FontWeight.w400,
+                                  borderColor: Colors.transparent,
+                                  fontFamily: 'Urbanist',
+                                  backgroundColor: AppColor.p60,
+                                  textColor: AppColor.white,
+                                  edgeInsets: EdgeInsets.zero,
+                                  onPressed: () {},
+                                ),
                               ),
-                              SizedBox(
-                                width: 16.w,
-                              ),
-                              CustomUi.defButton(
-                                title: 'Browse Properties',
-                                radius: 8.w,
-                                fontSize: 14.sp,
-                                width: 192.w,
-                                fontWeight: FontWeight.w400,
-                                borderColor: Colors.transparent,
-                                fontFamily: 'Urbanist',
-                                backgroundColor: AppColor.p60,
-                                textColor: AppColor.white,
-                                edgeInsets:
-                                    CustomUi.defPadding(vr: 14.h, hr: 20.w),
-                                onPressed: () {},
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 50.h,
-                          ),
-                           Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Info.tablet(title: '200+', subtitle: 'Happy Clients', ),
-                              Info.tablet(
-                                  title: '10k+',
-                                  subtitle: 'Properties for Clients',),
-                              Info.tablet(
-                                  title: '16+',
-                                  subtitle: 'Years of Experience',),
-                            ],
-                          )
-                        ],
-                      ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 40.sl,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Info.tablet(title: '200+', subtitle: 'Happy Clients'),
+                            Info.tablet(
+                                title: '10k+',
+                                subtitle: 'Properties for Clients'),
+                            Info.tablet(
+                                title: '16+',
+                                subtitle: 'Years of Experience'),
+                          ],
+                        )
+                      ],
                     ),
                   ),
-                  SizedBox(width: 60.w,),
-                  Expanded(child: Image.asset(
+                ),
+                SizedBox(
+                  width: w * 0.5,
+                  child: Image.asset(
                     'assets/imgs/bg-1.png',
-                    fit: BoxFit.contain,
-                    height: 622.h,
-                  ))
-                ],
-              ),
-              Align(
-                alignment:  const Alignment(0, -0.7),
-                child: Image.asset('assets/imgs/logo-center.png',
-                    width: 129.w, fit: BoxFit.cover),
-              )
-            ],
-          ),
+                    fit: BoxFit.fill,
+                  ),
+                )
+              ],
+            ),
+            Align(
+              alignment: Alignment(0.1.sl, -0.9.sl),
+              child: Image.asset('assets/imgs/logo-center.png',
+                  width: 170.sl, fit: BoxFit.fill),
+            )
+          ],
         ),
+
       ],
     );
   }
